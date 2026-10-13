@@ -38,7 +38,6 @@ public class BookingController : Controller
         }
 
         var bookingDate = DateTime.Today;
-        var isNewDonor = model.LastDonationDate is null;
 
         StandDownEvent? standDownEvent = null;
         if (model.HasStandDownEvent
@@ -54,7 +53,7 @@ public class BookingController : Controller
             };
         }
 
-        var ineligible = Evaluate(model, bookingDate, isNewDonor, standDownEvent);
+        var ineligible = Evaluate(model, bookingDate, standDownEvent);
         if (ineligible is not null)
         {
             return View("Ineligible", ineligible);
@@ -88,26 +87,31 @@ public class BookingController : Controller
     private BookingIneligibleModel? Evaluate(
         BookingFormModel model,
         DateTime bookingDate,
-        bool isNewDonor,
         StandDownEvent? standDownEvent)
     {
-        if (!_eligibilityService.IsAgeEligible(model.DateOfBirth, bookingDate, isNewDonor))
+        switch (_eligibilityService.CheckAge(model.DateOfBirth, model.LastDonationDate, bookingDate))
         {
-            var age = _eligibilityService.CalculateAge(model.DateOfBirth, bookingDate);
-            return age < EligibilityRules.MinimumAge
-                ? new BookingIneligibleModel
+            case AgeEligibility.TooYoung:
+                return new BookingIneligibleModel
                 {
                     FailedRule = "Age",
                     Message = $"Donors must be at least {EligibilityRules.MinimumAge} years old.",
                     EarliestEligibleDate = _eligibilityService.MinimumAgeDate(model.DateOfBirth)
-                }
-                : new BookingIneligibleModel
+                };
+            case AgeEligibility.TooOld:
+                return new BookingIneligibleModel
                 {
                     FailedRule = "Age",
-                    Message = isNewDonor
-                        ? $"New donors must be {EligibilityRules.NewDonorMaximumAge} or younger."
-                        : $"Returning donors can donate until they turn {EligibilityRules.ReturningDonorAgeLimit}.",
-                    EarliestEligibleDate = null
+                    Message = model.LastDonationDate is null
+                        ? $"First-time donors must be under {EligibilityRules.NewDonorAgeLimit}."
+                        : $"Donors can donate until they turn {EligibilityRules.AuthorisedDonorAgeLimit}."
+                };
+            case AgeEligibility.NeedsAuthorisation:
+                return new BookingIneligibleModel
+                {
+                    FailedRule = "Age",
+                    Message = "At your age, donating needs authorisation from an NZBS Medical Officer. " +
+                              "Please contact NZBS before booking."
                 };
         }
 
