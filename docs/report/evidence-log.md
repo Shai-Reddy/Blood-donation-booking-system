@@ -99,11 +99,11 @@ Facts found while collecting evidence that the report should state plainly.
 
 - **PR #15 was never reviewed on its own.** Its commits reached `main` through PR #18 (merge commit `fe889fc`), because the refactor branch was built on top of it. #18 was approved, so the code was reviewed, but only indirectly. It's a gap in the gate worth mentioning in Task 5.
 - **Most approvals have no comment.** Only #14's approval has text. #16 and #18 were approved in the same minute (2 Oct, 00:49 UTC), and #23 was approved twice within a minute. The lab-work criterion asks for "real comments, not same-minute approvals", so reviews from now on should include comments.
-- **Defect status labels didn't match the lifecycle** before 13 Oct: only #13 and #22 carried `status:verified`; #2, #3, #5 and #12 were closed as `status:fixed`, #7 and #11 closed as `status:in-progress`, and #9 closed with no status. Corrected on 13 Oct (section 8); the before screenshot is `evidence/defects/register-before-cleanup.png`.
+- **Defect status labels didn't match the lifecycle** before 13 Oct: only #13 and #22 carried `status:verified`; #2, #3, #5 and #12 were closed as `status:fixed`, #7 and #11 closed as `status:in-progress`, and #9 closed with no status. Corrected on 13 Oct (section 7); the before screenshot is `evidence/defects/register-before-cleanup.png`.
 
 ---
 
-## 8. Defect register clean-up (13 Oct)
+## 7. Defect register clean-up (13 Oct)
 
 Each change has a comment on the issue giving the evidence. Verification evidence: CI run `37110123735` on `main` (`3ff66d8`), 70 passed, 0 failed.
 
@@ -125,7 +125,7 @@ Still open without a status: #1 and #4 (P1; to be fixed together once Natalie's 
 
 ---
 
-## 7. Session log
+## 8. Session log
 
 ### 13 Oct (code freeze)
 - Opened #25 for the NZBS age rule. Test-first and fix pushed on `fix/age-rule-authorisation`, PR #26.
@@ -133,5 +133,5 @@ Still open without a status: #1 and #4 (P1; to be fixed together once Natalie's 
 - Pushed `fix/navbar-booking-eligibility` (same as `main`) for Natalie's C02 test-first commit for #1.
 - `.claude/settings.json`: AI attribution turned off (`822e57f`, in PR #24).
 - Screenshots: pull request list showing "Review required"; defect register before clean-up.
-- Defect register clean-up: 7 verified, 4 deferred (section 8).
+- Defect register clean-up: 7 verified, 4 deferred (section 7).
 - PR #27: `.mailmap`. `git shortlog -sne` now shows two people instead of four identities.
