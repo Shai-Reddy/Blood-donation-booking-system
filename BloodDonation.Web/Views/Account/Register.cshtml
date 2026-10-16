@@ -220,8 +220,8 @@
                 document.getElementById("DateOfBirthError").textContent = "You must be at least @EligibilityRules.MinimumAge years old to donate blood.";
                 isValid = false;
             }
-            else if (age >= @EligibilityRules.NewDonorMaximumAge) {
-                document.getElementById("DateOfBirthError").textContent = "First-time donors must be under @EligibilityRules.NewDonorMaximumAge years old.";
+            else if (age >= @EligibilityRules.NewDonorAgeLimit) {
+                document.getElementById("DateOfBirthError").textContent = "First-time donors must be under @EligibilityRules.NewDonorAgeLimit years old.";
                 isValid = false;
             }
         }
