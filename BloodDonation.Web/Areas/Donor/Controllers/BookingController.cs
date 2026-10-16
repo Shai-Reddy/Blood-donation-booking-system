@@ -43,7 +43,13 @@ public class BookingController : Controller
         var standDownEvent = BookingEligibilityCheck.StandDownFromForm(
             model.HasStandDownEvent, model.StandDownReason, model.StandDownEventDate, model.StandDownDurationDays);
 
-        var ineligible = Evaluate(model, bookingDate, standDownEvent);
+        var ineligible = _eligibilityCheck.Check(
+            User.FindFirstValue(ClaimTypes.NameIdentifier)!,
+            model.DateOfBirth,
+            model.WeightKg,
+            model.LastDonationDate,
+            standDownEvent,
+            bookingDate);
         if (ineligible is not null)
         {
             return View("Ineligible", ineligible);
@@ -72,68 +78,5 @@ public class BookingController : Controller
         _store.Appointments.Add(appointment);
 
         return View("Confirmation", appointment);
-    }
-
-    private BookingIneligibleModel? Evaluate(
-        BookingFormModel model,
-        DateTime bookingDate,
-        StandDownEvent? standDownEvent)
-    {
-        switch (_eligibilityService.CheckAge(model.DateOfBirth, model.LastDonationDate, bookingDate))
-        {
-            case AgeEligibility.TooYoung:
-                return new BookingIneligibleModel
-                {
-                    FailedRule = "Age",
-                    Message = $"Donors must be at least {EligibilityRules.MinimumAge} years old.",
-                    EarliestEligibleDate = _eligibilityService.MinimumAgeDate(model.DateOfBirth)
-                };
-            case AgeEligibility.TooOld:
-                return new BookingIneligibleModel
-                {
-                    FailedRule = "Age",
-                    Message = model.LastDonationDate is null
-                        ? $"First-time donors must be under {EligibilityRules.NewDonorAgeLimit}."
-                        : $"Donors can donate until they turn {EligibilityRules.AuthorisedDonorAgeLimit}."
-                };
-            case AgeEligibility.NeedsAuthorisation:
-                return new BookingIneligibleModel
-                {
-                    FailedRule = "Age",
-                    Message = "At your age, donating needs authorisation from an NZBS Medical Officer. " +
-                              "Please contact NZBS before booking."
-                };
-        }
-
-        if (!_eligibilityService.IsWeightEligible(model.WeightKg))
-        {
-            return new BookingIneligibleModel
-            {
-                FailedRule = "Weight",
-                Message = $"Minimum weight for donation is {EligibilityRules.MinimumWeightKg}kg."
-            };
-        }
-
-        if (!_eligibilityService.IsIntervalEligible(model.LastDonationDate, bookingDate))
-        {
-            return new BookingIneligibleModel
-            {
-                FailedRule = "Interval",
-                Message = $"At least {EligibilityRules.MinimumDonationIntervalDays} days must pass between donations.",
-                EarliestEligibleDate = _eligibilityService.EarliestDonationDate(model.LastDonationDate!.Value)
-            };
-        }
-
-        if (!_eligibilityService.IsStandDownCleared(standDownEvent, bookingDate))
-        {
-            return new BookingIneligibleModel
-            {
-                FailedRule = "Stand-down",
-                Message = $"Stand-down period for {standDownEvent!.Reason} has not elapsed.",
-                EarliestEligibleDate = _eligibilityService.StandDownEndDate(standDownEvent)
-            };
-        }
-
-        return null;
     }
 }
