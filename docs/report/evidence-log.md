@@ -18,8 +18,8 @@ Items marked **Now** show a state that will change. Capture them before the next
 | [x] | 13 Oct | Issues list filtered by `type:defect` (all 16), status labels before clean-up | Task 6 (before clean-up) | `evidence/defects/register-before-cleanup.png` |
 | [x] | 16 Oct | Pull request list row for #32: "Review required", checks 0/2 failed (after the #1 fix, 10 tests) | Task 5 | `evidence/ci/red-check-pr32.png` |
 | [ ] | Any time | Settings → Branches → protection rule for `main` | Task 5 | `evidence/ci/branch-protection.png` |
-| [ ] | Any time | Actions tab, run history | Task 5 | `evidence/ci/actions-history.png` |
-| [ ] | Any time | Run `38378148778` (red) and `38378373592` (green), test step expanded | Task 3, Task 5 | `evidence/ci/age-rule-red.png`, `age-rule-green.png` |
+| [x] | 16 Oct | Actions tab, run history (public page, captured with headless Chrome) | Task 5 | `evidence/ci/actions-history.png` |
+| [x] | 16 Oct | Run `38378148778` (red) and `38378373592` (green) for #25; run `38881677765` (red, broken merge on #39). Run summaries; logs need sign-in | Task 3, Task 5 | `evidence/ci/age-rule-red-38378148778.png`, `age-rule-green-38378373592.png`, `broken-merge-red-38881677765.png` |
 | [x] | 16 Oct | Defect register after clean-up: open (7, `status:deferred` or `status:in-progress`) and closed (9, all `status:verified`). Every issue is a defect, so the two tabs cover the same 16 as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup-open.png`, `register-after-cleanup-closed.png` |
 | [x] | 16 Oct | NZBS Eligibility Criteria page, Age section. Matches PR #26 (comment on #25). The address bar and date are not in the shot; retake with them if time allows | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
@@ -232,3 +232,9 @@ All five categories now have at least one logged example. C04–C06 evidence is 
   - Commits on `main` (no merges, `.mailmap`): Shailesh 40, Natalie 24.
   - PRs: 21 merged; 3 without their own review (#15, #28, #30); 4 of 18 approvals with a written comment (#14, #39, #40, #41).
 - Report drafts for Tasks 1–11 updated with the freeze figures.
+- **Natalie's remaining Copilot paperwork, finished by Shailesh where possible:**
+  - C04–C06 rows added to `ai-usage-log.md` from her reports, with Member = Natalie.
+  - Her C05 report corrected: NFR2 sets the 2,000 ms limit, so it is not provisional. The correction is marked in the report.
+  - The load test's "provisional" comment and messages corrected.
+  - C07 CI-run screenshot captured from the public run page (`evidence/copilot/C07-ci-coverage/ci-run-with-coverage-artefact.png`, run `38504692279`, artefact `test-results-and-coverage`, 39.8 KB).
+- **Still Natalie's:** C01 and C09 chat screenshots (only her chat history has them); her Task 9 and Task 11 reflections.

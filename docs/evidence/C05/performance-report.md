@@ -117,7 +117,7 @@ The results were:
 
 The P95 response time was **27.56 ms**, which was well below the 2,000 ms limit currently configured in the test.
 
-However, the 2,000 ms threshold is still provisional because the official NFR2 performance requirement has not yet been confirmed.
+The 2,000 ms limit comes from NFR2 in the mid-project report: "Return an eligibility result within 2 seconds under normal load, defined as up to 20 concurrent users." NFR2 asks for every result within 2 seconds, while the test checks p95; the maximum response time (32.14 ms) is also far below 2 seconds, so NFR2 is met on either reading. *(Correction added by Shailesh on 16 October; the original text said the limit was provisional because NFR2 had not been confirmed.)*
 
 The results show that the system was able to process the tested eligibility rejection requests quickly in the in-memory test environment.
 
@@ -149,7 +149,7 @@ Secondly, the test focused on donors who were not eligible to book because they 
 
 The test also used a fixed number of donors and requests, so it does not demonstrate how the system would perform under much larger workloads.
 
-Finally, the 2,000 ms P95 limit still needs to be checked against the official NFR2 requirement.
+Finally, the test asserts on p95, while NFR2 asks for every result within 2 seconds; asserting on the maximum would match NFR2's wording exactly.
 
 These limitations mean that the results are useful for evaluating the current implementation, but they should not be treated as proof that the system is ready for production-scale usage.
 

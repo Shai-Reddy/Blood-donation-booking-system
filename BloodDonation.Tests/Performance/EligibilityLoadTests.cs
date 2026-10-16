@@ -15,7 +15,7 @@ public class EligibilityLoadTests
 {
     private const int DonorCount = 20;
     private const int RoundCount = 10;
-    // Provisional until the NFR2 response-time requirement is confirmed.
+    // NFR2: an eligibility result within 2 seconds at up to 20 concurrent users (mid-project report).
     private const double P95LimitMilliseconds = 2000;
     private const string Password = "Load#Test1";
     private const string IntervalRejectionMessage = "At least 84 days must pass between donations.";
@@ -140,7 +140,7 @@ public class EligibilityLoadTests
             TestContext.WriteLine($"Average response time: {average:F2} ms");
             TestContext.WriteLine($"Nearest-rank p95 response time: {p95:F2} ms (rank {p95Rank})");
             TestContext.WriteLine($"Maximum response time: {maximum:F2} ms");
-            TestContext.WriteLine($"Provisional P95 limit (NFR2 confirmation pending): {P95LimitMilliseconds:F0} ms");
+            TestContext.WriteLine($"P95 limit (NFR2): {P95LimitMilliseconds:F0} ms");
 
             Assert.HasCount(DonorCount * RoundCount, allResults,
                 "Not all timed booking requests completed.");
@@ -150,7 +150,7 @@ public class EligibilityLoadTests
                 $"Expected no bookings for interval-ineligible requests; found {bookingsCreated}.");
 
             Assert.IsLessThanOrEqualTo(P95LimitMilliseconds,
-                p95, $"Provisional NFR2 p95 was {p95:F2} ms; limit is {P95LimitMilliseconds:F0} ms.");
+                p95, $"NFR2 p95 was {p95:F2} ms; limit is {P95LimitMilliseconds:F0} ms.");
         }
         finally
         {
