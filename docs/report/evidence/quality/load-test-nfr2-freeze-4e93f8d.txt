@@ -1,0 +1,8 @@
+NFR2 out-of-process load test, freeze commit 4e93f8d, Kestrel at http://127.0.0.1:5090, 2026-10-16 22:55
+Machine: Apple M4, 10 logical CPUs, macOS 27.0.1; app and load generator on the same machine
+Request: POST /Donor/Book as a signed-in donor whose last donation is 10 days before session S1 (refused on the 84-day rule; nothing written)
+Requests timed: 200 (20 concurrent x 10 rounds), after 3 untimed warm-up requests
+Responses: [(302, '/Donor/Book')]
+Refusal message showed the 84-day rule for 20/20 donors (checked after the last round)
+Average 3.6 ms | median 3.3 ms | p95 7.1 ms | max 8.6 ms
+NFR2 (eligibility result within 2,000 ms at 20 concurrent users): PASS (max 8.6 ms)
