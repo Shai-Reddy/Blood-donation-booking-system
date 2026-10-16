@@ -18,19 +18,40 @@ public class EligibilityService
         return interval.TotalDays >= MinimumDonationIntervalDays;
     }
 
-    // New donors 16-71; returning donors from 16 until their 81st birthday (FR3)
-    public bool IsAgeEligible(DateTime dateOfBirth, DateTime bookingDate, bool isNewDonor)
+    // NZBS age rules (FR3). No last donation means a first-time donor.
+    // Nobody can donate from their 81st birthday, with or without authorisation.
+    public AgeEligibility CheckAge(DateTime dateOfBirth, DateTime? lastDonationDate, DateTime bookingDate)
     {
         var age = CalculateAge(dateOfBirth, bookingDate);
 
-        if (isNewDonor)
+        if (age < MinimumAge)
         {
-            return age >= MinimumAge && age <= NewDonorMaximumAge;
+            return AgeEligibility.TooYoung;
         }
-        else
+
+        if (lastDonationDate is null)
         {
-            return age >= MinimumAge && age < ReturningDonorAgeLimit;
+            return age < NewDonorAgeLimit ? AgeEligibility.Eligible : AgeEligibility.TooOld;
         }
+
+        if (age >= AuthorisedDonorAgeLimit)
+        {
+            return AgeEligibility.TooOld;
+        }
+
+        var ageLimit = IsLapsed(lastDonationDate.Value, bookingDate) ? LapsedDonorAgeLimit : ExistingDonorAgeLimit;
+        return age < ageLimit ? AgeEligibility.Eligible : AgeEligibility.NeedsAuthorisation;
+    }
+
+    public bool IsAgeEligible(DateTime dateOfBirth, DateTime? lastDonationDate, DateTime bookingDate)
+    {
+        return CheckAge(dateOfBirth, lastDonationDate, bookingDate) == AgeEligibility.Eligible;
+    }
+
+    // Lapsed: last donation more than 2 years before the booking. Exactly 2 years still counts as existing.
+    public bool IsLapsed(DateTime lastDonationDate, DateTime bookingDate)
+    {
+        return lastDonationDate.Date < bookingDate.Date.AddYears(-LapsedAfterYears);
     }
 
     // 50kg minimum (FR4)
