@@ -16,11 +16,12 @@ Items marked **Now** show a state that will change. Capture them before the next
 |---|---|---|---|---|
 | [x] | 13 Oct | Pull request list: #24 and #26 showing "Review required" with checks 2/2 passed | Task 5 | `evidence/ci/pr-review-required.png` |
 | [x] | 13 Oct | Issues list filtered by `type:defect` (all 16), status labels before clean-up | Task 6 (before clean-up) | `evidence/defects/register-before-cleanup.png` |
-| [ ] | When #1's test-first commit is pushed | PR or commit page showing the failed check | Task 5 | `evidence/ci/red-check-test-first.png` |
+| [ ] | **Now**, before C04 fixes land | PR #32 page showing failing checks (red after the #1 fix, 10 tests) | Task 5 | `evidence/ci/red-check-pr32.png` |
 | [ ] | Any time | Settings → Branches → protection rule for `main` | Task 5 | `evidence/ci/branch-protection.png` |
 | [ ] | Any time | Actions tab, run history | Task 5 | `evidence/ci/actions-history.png` |
 | [ ] | Any time | Run `38378148778` (red) and `38378373592` (green), test step expanded | Task 3, Task 5 | `evidence/ci/age-rule-red.png`, `age-rule-green.png` |
-| [ ] | **Now**, clean-up done 13 Oct | Issues list filtered by `type:defect`, same view as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup.png` |
+| [ ] | **Now** (clean-up done 13 Oct; still not taken on 16 Oct) | Issues list filtered by `type:defect`, same view as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup.png` |
+| [ ] | Any time | NZBS age criteria page in a browser, date visible (nobody has read the source directly yet; C09 could not reach it) | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
 | [ ] | On the freeze commit | `dotnet test` output, TRX file, coverage report | Task 3, Task 4 | `evidence/tests/` |
 | [ ] | On the freeze commit | App: each role's main screens, a rejection message, the coordinator dashboard | Task 1 | `evidence/app/` |
@@ -40,6 +41,8 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 | #9 Client-side validation | `e3f3510` | `37096971901` | `59c282f` | `37103971876` | #21 | Shai-Reddy | 3 Oct |
 | #22 Anti-forgery | `61b6592` | `37108388480` | `3ecf9d9` | `37109501824` | #23 | Shai-Reddy | 3 Oct |
 | #25 NZBS age rule (corrects #2) | `82c13f9` | `38378148778` | `0a394f4` | `38378373592` | #26 | pending | open |
+| #1 Navbar booking skips eligibility | `414770c` (Natalie, C02) | `38495890975` | `c89f6e8` | red: `38831085782` (see below) | #32 (draft) | pending | open |
+| #4 Stand-downs not remembered | `45de589` | `38830933862` | `c89f6e8` | red: `38831085782` (see below) | #32 (draft) | pending | open |
 
 ### #25 details (13 Oct)
 - Found by checking `EligibilityService.IsAgeEligible` against the NZBS criteria (CRITERIA.md section 3). The #2 fix (`deb8737`) had set the limit to the 81st birthday with no authorisation step, and its tests passed because they used the same wrong limit.
@@ -51,6 +54,12 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 - Decision recorded in PR #26: first-time donors are accepted until their 71st birthday, following the Transfusion Medicine Handbook 2.2. The registration form already used this limit.
 - Source note: the NZBS pages block non-browser requests, so the rules were taken from nzblood.co.nz search results and CRITERIA.md. **Open the page in a browser and screenshot it before citing it.**
 
+### #1 and #4 details (14–16 Oct)
+- Test-first for #1: Natalie's C02 commit `414770c`, 5 integration tests in `BookingEligibilityTests` posting to `/Donor/Book`. CI run `38495890975`: 75 total, 67 passed, 8 failed. 4 failures were the new tests, as intended. The other 4 were existing tests (`DonorCancelsOwnBooking_IsAllowed`, `DonorDashboard_DoesNotShowAnotherDonorsBooking`, `TC11_DeferredWithoutReason_IsRejected`, `DeferredWithReason_IsSaved`): the new tests booked into session S3 in the shared static store and used up its places. A test-isolation problem linked to #17.
+- Test-first for #4: `45de589`, 2 tests in `StandDownRecordTests` posting to `/Donor/Booking/Book`. `TC08_StandDownEnteredEarlier_StillBlocksBookingWithoutIt` failed on the second booking, as intended (run `38830933862`).
+- Fix `c89f6e8`: one `BookingEligibilityCheck` used by both booking pages; the navbar form asks for date of birth, weight, last donation and stand-down; eligibility is judged on the session date; stand-downs recorded in `StandDownRegister` (singleton, locked).
+- After the fix, CI run `38831085782`: 77 total, 67 passed, 10 failed. 9 older tests post the old form without the new required fields ("Booking failed"). 1 of Natalie's tests (`DonorWithLastDonationBeforeMinimumInterval_CannotBook`) sets the last donation relative to today; by the session date 92 days have passed, so the donor is correctly allowed to book. Both are handed to Natalie as C04 (debugging). PR #32 stays a draft until they pass.
+
 ---
 
 ## 3. Other PRs
@@ -61,22 +70,34 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 | #18 | `refactor/eligibility-domain` | Thresholds and date logic moved into the domain | – | Natalie25-4 | 2 Oct |
 | #24 | `docs/copilot-evidence` | Copilot evidence guide, AI usage log, attribution setting, evidence log | – | pending | open |
 | #27 | `chore/mailmap` | `.mailmap` so each member counts once in commit statistics | – | pending | open |
+| #28 | `ci/coverage-smoke-tests` | C07: TRX and Cobertura coverage uploaded as CI artefacts (`coverlet.collector`) | – | none of its own (see section 6) | 16 Oct, via #31 |
+| #29 | `docs/booking-eligibility-rca` | C08: #2 RCA and Copilot comparison | – | Shai-Reddy | 16 Oct |
+| #30 | `docs/c01-security-review-evidence` | C01 evidence | – | none of its own (see section 6) | 16 Oct, via #31 |
+| #31 | `docs/c09-age-rules-evidence` | C09 evidence | – | Shai-Reddy | 16 Oct |
 
 ---
 
 ## 4. CI figures
 
-Snapshot on 13 Oct, after the #25 fix was pushed:
+Snapshot on 16 Oct, after the #1 and #4 fix was pushed:
 
 | Measure | Value |
 |---|---|
-| Total runs | 44 |
-| Passed | 31 |
-| Failed | 13 |
-| Failed runs that were test-first commits | 13 of 13 |
-| Runs on `main` | 8, all passed |
+| Total runs | 74 |
+| Passed | 56 |
+| Failed | 18 |
+| Runs on `main` | 10, all passed |
 
-Every red run was intended: a test written to expose a known defect before its fix. No run on `main` has failed. Recount on the freeze commit with:
+The 18 failed runs come from 11 commits:
+- 9 test-first commits, red on purpose: `907ade7`, `8d5563a`, `3aae71f`, `a9d059f`, `e3f3510`, `61b6592`, `82c13f9`, `414770c`, `45de589`.
+- `c89f6e8`: the #1 fix broke 9 older tests that build bookings with the old form, and exposed a wrong assumption in one new test. CI caught both before merge.
+- `1b37f37`: the Copilot-written NFR2 load test passed its arguments to `Assert.IsLessThanOrEqualTo` the wrong way round, so it asserted 2000 ≤ 8.36 ms and failed. CI caught a test bug, not a product bug.
+
+No run on `main` has failed.
+
+Code coverage (C07, 14 Oct, 70 tests): line 71.02% (527/742), branch 75.37% (499/662). Source: `evidence/copilot/C07-ci-coverage/notes.md`. Re-measure on the freeze commit.
+
+Recount on the freeze commit with:
 ```
 gh run list --limit 200 --json conclusion,headBranch -q '.[] | "\(.conclusion) \(.headBranch)"' | sort | uniq -c
 ```
@@ -89,7 +110,10 @@ gh run list --limit 200 --json conclusion,headBranch -q '.[] | "\(.conclusion) \
 |---|---|---|---|---|---|---|
 | 13 Oct | `3ff66d8` (`main`) | 70 | 70 | 0 | local `dotnet test` | Baseline at code freeze |
 | 13 Oct | `82c13f9` | 79 | 75 | 4 | CI run `38378148778` | Test-first for #25; the 4 failures are new tests |
-| 13 Oct | `0a394f4` | 85 | 85 | 0 | CI run `38378373592` | #25 fixed |
+| 13 Oct | `0a394f4` | 85 | 85 | 0 | CI run `38378373592` | #25 fixed (branch, not yet on `main`) |
+| 14 Oct | `414770c` | 75 | 67 | 8 | CI run `38495890975` | Test-first for #1 (Natalie, C02) |
+| 16 Oct | `d03f051` (`main`) | 70 | 70 | 0 | CI run `38830168657` | `main` after #28–#31 (docs and CI only) |
+| 16 Oct | `c89f6e8` | 77 | 67 | 10 | CI run `38831085782` | #1 and #4 fixed; 10 test failures left for C04 |
 
 ---
 
@@ -98,8 +122,14 @@ gh run list --limit 200 --json conclusion,headBranch -q '.[] | "\(.conclusion) \
 Facts found while collecting evidence that the report should state plainly.
 
 - **PR #15 was never reviewed on its own.** Its commits reached `main` through PR #18 (merge commit `fe889fc`), because the refactor branch was built on top of it. #18 was approved, so the code was reviewed, but only indirectly. It's a gap in the gate worth mentioning in Task 5.
-- **Most approvals have no comment.** Only #14's approval has text. #16 and #18 were approved in the same minute (2 Oct, 00:49 UTC), and #23 was approved twice within a minute. The lab-work criterion asks for "real comments, not same-minute approvals", so reviews from now on should include comments.
+- **Stacked branches let two more PRs skip their own review.** Natalie built each branch on the previous one, so merging #31 also carried in #28 (a CI workflow change) and #30. GitHub marked both merged with no review of their own. With #15 that is three PRs. Rule from 16 Oct: one branch per PR, always created from `main`.
+- **Most approvals have no comment.** Only #14's approval has text. #16 and #18 were approved in the same minute (2 Oct, 00:49 UTC), and #23 was approved twice within a minute. The lab-work criterion asks for "real comments, not same-minute approvals", so reviews from now on should include comments. #29 and #31 (16 Oct) were also approved with no comment, in the same minute as the merge.
 - **Defect status labels didn't match the lifecycle** before 13 Oct: only #13 and #22 carried `status:verified`; #2, #3, #5 and #12 were closed as `status:fixed`, #7 and #11 closed as `status:in-progress`, and #9 closed with no status. Corrected on 13 Oct (section 7); the before screenshot is `evidence/defects/register-before-cleanup.png`.
+
+---
+
+- **C07 added coverage but no smoke step.** Natalie's notes say so explicitly. A smoke step is still needed for Task 5.
+- **The usage log diverged.** `main` gained an older copy of `ai-usage-log.md` (from #29–#31), with a C08 row in the mid-project section. Resolved in the `docs/copilot-evidence` branch on 16 Oct (`d53d631`), keeping M1–M5 and Natalie's C rows.
 
 ---
 
@@ -135,3 +165,33 @@ Still open without a status: #1 and #4 (P1; to be fixed together once Natalie's 
 - Screenshots: pull request list showing "Review required"; defect register before clean-up.
 - Defect register clean-up: 7 verified, 4 deferred (section 7).
 - PR #27: `.mailmap`. `git shortlog -sne` now shows two people instead of four identities.
+
+### 14–15 Oct (Natalie)
+- Copilot sessions C01, C02, C07, C08 and C09; C05 started (scaffold `1b37f37`, no PR).
+- PRs #28–#31 opened; usage log consolidated on `docs/copilot-evidence` (`9bdab3e`).
+
+### 16 Oct
+- #28–#31 merged (#28 and #30 through #31, see section 6). `main` green, 70 tests.
+- #4 test-first `45de589`; #1 and #4 fix `c89f6e8`; draft PR #32. Issues #1 and #4 labelled `status:in-progress`.
+- Usage-log conflict on #24 resolved (`d53d631`).
+
+---
+
+## 9. Copilot sessions (Task 9)
+
+Status on 16 Oct. Details in `ai-usage-log.md` and `evidence/copilot/`.
+
+| Session | Category | Status |
+|---|---|---|
+| C01 Security review | QA | Done. Neutral prompt 3/5 known defects, security prompt 0/5, targeted 3/5 |
+| C02 Test-first tests for #1 | Testing | Done (`414770c`). No evidence folder yet; the log row says "location to confirm" |
+| C03 Test design | Testing | Not started (optional) |
+| C04 Debugging | Debugging | **Not started.** Ready: 10 failing tests on PR #32 |
+| C05 Load test | Implementation | **Started.** Scaffold `1b37f37`: swapped assertion arguments, missing date of birth and weight fields, no warm-up. Waits for #32 |
+| C06 Test helper refactor | Refactoring | **Not started.** After #32 merges |
+| C07 CI coverage | QA (CI) | Done (#28). No smoke step |
+| C08 RCA for #2 | QA (RCA) | Done (#29). Notes say the comparison was not independent |
+| C09 NZBS age rules | QA | Done (#31) |
+| C10 Copilot as reviewer | QA | Not started (optional) |
+
+Debugging, refactoring and a finished implementation example are still missing. CRITERIA.md set 15 Oct as the deadline for all categories.
