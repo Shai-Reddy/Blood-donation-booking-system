@@ -25,6 +25,26 @@ jobs:
       - name: Test
         run: dotnet test BloodDonation.sln --no-build --configuration Release --verbosity normal --results-directory TestResults --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
 
+      # Smoke test: the built app starts and the home page returns HTTP 200.
+      - name: Smoke test
+        run: |
+          dotnet run --project BloodDonation.Web --no-build --no-launch-profile --configuration Release --urls http://127.0.0.1:5080 > smoke.log 2>&1 &
+          app_pid=$!
+          status=000
+          for attempt in $(seq 1 30); do
+            status=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:5080/ || true)
+            if [ "$status" = "200" ]; then
+              echo "Smoke test passed: home page returned HTTP 200 after $attempt attempt(s)."
+              kill $app_pid
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Smoke test failed: home page returned HTTP $status after 60 seconds."
+          cat smoke.log
+          kill $app_pid
+          exit 1
+
       - name: Upload test results and coverage
         if: always()
         uses: actions/upload-artifact@v4
