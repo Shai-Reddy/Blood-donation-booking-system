@@ -1,0 +1,13 @@
+Scripted browser run (Puppeteer + Chrome), freeze build 4e93f8d, 2026-10-16T10:56:23.384Z
+S1 session date: 2026-10-21
+
+MT5	Screens counted	Path: / -> /Account/Register -> /Donor/Dashboard -> /Donor/Book -> /Donor/Dashboard; confirmation shown: true
+MT1a (83 days)	Pass	URL /Donor/Book; message: "You can't donate on Wednesday 21 Oct 2026. At least 84 days must pass between donations. You can book a session from 22 Oct 2026."
+MT1b (84 days)	Pass	URL /Donor/Dashboard; message: "Your appointment on Wednesday 21 Oct 2026 at Auckland City Centre is confirmed."
+MT3	Pass	S4 disabled: true; label: "Monday 26 Oct 2026 · 10:00 AM - 2:00 PM North Shore Clinic — Fully booked"
+MT4a (client)	Pass	Messages before submit: [["DonorName","The DonorName field is required."],["DonorEmail","The DonorEmail field is required."],["DateOfBirth","The Date of birth field is required."],["WeightKg","The field Weight (kg) must be between 1 and 300."],["SessionId","The SessionId field is required."]]
+MT4b (server, JS off)	Pass	Messages after submit: [["DateOfBirth","The Date of birth field is required."],["WeightKg","The field Weight (kg) must be between 1 and 300."]]
+MT7	Pass	message: "You can't donate on Wednesday 21 Oct 2026. At your age, donating needs authorisation from an NZBS Medical Officer. Please contact NZBS before booking."
+Access	Pass	Donor opening /Staff/Dashboard ended at /Account/AccessDenied
+TC11 (visual)	Pass	Deferred with no reason: save refused, status stayed Confirmed, message "A reason is required when the donor is deferred." shown (checked on screenshot 16). Message also shown on the other row: defect #43.
+MT6	Pass	O+ stock before 14, after recording Donated: 15

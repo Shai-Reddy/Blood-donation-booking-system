@@ -18,13 +18,13 @@ Items marked **Now** show a state that will change. Capture them before the next
 | [x] | 13 Oct | Issues list filtered by `type:defect` (all 16), status labels before clean-up | Task 6 (before clean-up) | `evidence/defects/register-before-cleanup.png` |
 | [x] | 16 Oct | Pull request list row for #32: "Review required", checks 0/2 failed (after the #1 fix, 10 tests) | Task 5 | `evidence/ci/red-check-pr32.png` |
 | [ ] | Any time | Settings → Branches → protection rule for `main` | Task 5 | `evidence/ci/branch-protection.png` |
-| [ ] | Any time | Actions tab, run history | Task 5 | `evidence/ci/actions-history.png` |
-| [ ] | Any time | Run `38378148778` (red) and `38378373592` (green), test step expanded | Task 3, Task 5 | `evidence/ci/age-rule-red.png`, `age-rule-green.png` |
+| [x] | 16 Oct | Actions tab, run history (public page, captured with headless Chrome) | Task 5 | `evidence/ci/actions-history.png` |
+| [x] | 16 Oct | Run `38378148778` (red) and `38378373592` (green) for #25; run `38881677765` (red, broken merge on #39). Run summaries; logs need sign-in | Task 3, Task 5 | `evidence/ci/age-rule-red-38378148778.png`, `age-rule-green-38378373592.png`, `broken-merge-red-38881677765.png` |
 | [x] | 16 Oct | Defect register after clean-up: open (7, `status:deferred` or `status:in-progress`) and closed (9, all `status:verified`). Every issue is a defect, so the two tabs cover the same 16 as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup-open.png`, `register-after-cleanup-closed.png` |
 | [x] | 16 Oct | NZBS Eligibility Criteria page, Age section. Matches PR #26 (comment on #25). The address bar and date are not in the shot; retake with them if time allows | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
-| [ ] | On the freeze commit | `dotnet test` output, TRX file, coverage report | Task 3, Task 4 | `evidence/tests/` |
-| [ ] | On the freeze commit | App: each role's main screens, a rejection message, the coordinator dashboard | Task 1 | `evidence/app/` |
+| [x] | 16 Oct, freeze `4e93f8d` | TRX results (95/95) and coverage report | Task 3, Task 4, Task 8 | `evidence/tests/freeze-4e93f8d-test-results.trx.xml`, `cobertura-freeze-4e93f8d.xml` |
+| [x] | 16 Oct, freeze build | App: each role's main screens, rejection and authorisation messages, validation, staff and coordinator dashboards (scripted browser) | Task 1, Task 3, slides | `evidence/app/01–18*.png` |
 
 ---
 
@@ -192,15 +192,15 @@ Status on 16 Oct. Details in `ai-usage-log.md` and `evidence/copilot/`.
 | C01 Security review | QA | Done. Neutral prompt 3/5 known defects, security prompt 0/5, targeted 3/5 |
 | C02 Test-first tests for #1 | Testing | Done (`414770c`). No evidence folder yet; the log row says "location to confirm" |
 | C03 Test design | Testing | Not started (optional) |
-| C04 Debugging | Debugging | **Not started.** Ready: 10 failing tests on PR #32 |
-| C05 Load test | Implementation | **Started.** Scaffold `1b37f37`: swapped assertion arguments, missing date of birth and weight fields, no warm-up. Waits for #32 |
-| C06 Test helper refactor | Refactoring | **Not started.** After #32 merges |
+| C04 Debugging | Debugging | Done (#39): both causes found and fixed; 77/77 |
+| C05 Load test | Implementation | Done (#40): average 10.96 ms, p95 27.56 ms, max 32.14 ms |
+| C06 Test helper refactor | Refactoring | Done (#41): helpers shared by 2 classes; 8 files still duplicate |
 | C07 CI coverage | QA (CI) | Done (#28). No smoke step |
 | C08 RCA for #2 | QA (RCA) | Done (#29). Notes say the comparison was not independent |
 | C09 NZBS age rules | QA | Done (#31) |
 | C10 Copilot as reviewer | QA | Not started (optional) |
 
-Debugging, refactoring and a finished implementation example are still missing. CRITERIA.md set 15 Oct as the deadline for all categories.
+All five categories now have at least one logged example. C04–C06 evidence is in `docs/evidence/C04–C06/`; their rows still need adding to `ai-usage-log.md`.
 
 ### 16 Oct (later): quality testing and new defects
 - **Scope reasons** for Partial and Out-of-scope requirements reconstructed from the mid-project sprint plan and the git and issue timeline (Task 2.1). FR7 was never assigned a sprint: a planning gap.
@@ -213,3 +213,37 @@ Debugging, refactoring and a finished implementation example are still missing. 
 - **NFR2 load test**, out of process (`evidence/quality/load-test-nfr2-2026-10-16.txt`): 20 signed-in donors × 10 rounds, 200 requests, all refused on the 84-day rule as designed. Average 3.3 ms, median 3.1, p95 5.8, max 7.1 ms. Apple M4, same machine.
 - **Lighthouse 12.6.1 accessibility** (`evidence/quality/lighthouse/`): home 92 (step-number contrast 1.8:1 → **#37**, low, P3, deferred), sign in 100, staff sign in 100, register 100.
 - **Report drafts** for Tasks 1–11 written in `docs/report/` (not yet committed).
+
+### 16 Oct (evening): merges and the freeze commit
+- Natalie merged #24, #26, #27, #33 and #38. #25 and #35 closed; marked `status:verified` with test names.
+- Natalie's C04 (#39), C05 (#40) and C06 (#41), each with CI green. All three were built on #32's branch and on each other.
+- `847539b`: `main` merged into #39 through GitHub's web conflict editor. The donor booking controller was resolved by mixing two versions; CI failed at Build with 15 compile errors (runs `38881677765`, `38881685074`). Redone in `945f249` (controller from #32, `BookingEligibilityCheck` using `CheckAge` from #26): 93/93 locally, CI green. #40 and #41 updated from the corrected #39 (95/95 each).
+- Merged one at a time, each with a written approval by Shailesh: #39 (`721225a`), #40 (`058a70d`), #41 (`4e93f8d`). #32 shows merged through #39. #1 and #4 closed; marked `status:verified`.
+- **Freeze commit `4e93f8d`.** CI run `38883522127` green. Local Release run: **95 passed, 0 failed**, 0 warnings. 45 unit, 48 integration, 2 performance.
+- **Coverage at freeze:** overall line 84.54% (607/718), branch 80.8% (564/698); Domain 87.3% / 100%; Web 84.2% / 80.1%.
+- **Security probes on the freeze build** (`evidence/quality/security-probes-freeze-4e93f8d.txt`): 44/44 role checks; open redirect blocked; anti-forgery 400; cross-donor cancel refused; **P6 new: staff see a donor's booking with its outcome form (#35 fixed)**; lockout still fails (#36, deferred); cookie HttpOnly, SameSite=Lax.
+- **NFR2 on the freeze build** (`evidence/quality/load-test-nfr2-freeze-4e93f8d.txt`): 200 requests, all refused on the 84-day rule; average 3.6 ms, median 3.3, p95 7.1, max 8.6 ms. Natalie's in-process C05: average 10.96, p95 27.56, max 32.14 ms.
+- **Final figures:**
+  - CI: 133 runs, 112 passed, 21 failed (19 at Test, 2 at Build); 18/18 on `main`; median 42 s.
+  - Failed-run commits: 10 test-first; 3 caught before merge (`c89f6e8`, `1b37f37`, `847539b`).
+  - Defects: 20; 13 closed and verified, 7 deferred; 0 open P1.
+  - Time to close: median 48.7 h, mean 96.3 h, longest 393.5 h (#1).
+  - Size: 1,387 non-blank C# lines in Domain and Web, so 14.4 defects per KLOC.
+  - Commits on `main` (no merges, `.mailmap`): Shailesh 40, Natalie 24.
+  - PRs: 21 merged; 3 without their own review (#15, #28, #30); 4 of 18 approvals with a written comment (#14, #39, #40, #41).
+- Report drafts for Tasks 1–11 updated with the freeze figures.
+- **Natalie's remaining Copilot paperwork, finished by Shailesh where possible:**
+  - C04–C06 rows added to `ai-usage-log.md` from her reports, with Member = Natalie.
+  - Her C05 report corrected: NFR2 sets the 2,000 ms limit, so it is not provisional. The correction is marked in the report.
+  - The load test's "provisional" comment and messages corrected.
+  - C07 CI-run screenshot captured from the public run page (`evidence/copilot/C07-ci-coverage/ci-run-with-coverage-artefact.png`, run `38504692279`, artefact `test-results-and-coverage`, 39.8 KB).
+- **Still Natalie's:** C01 and C09 chat screenshots (only her chat history has them); her Task 9 and Task 11 reflections.
+- **Scripted browser run** (Puppeteer driving Chrome) against the freeze build (`evidence/app/`, `results.txt`). Session S1 was 21 Oct.
+  - MT1: 83 days refused with "You can book a session from 22 Oct 2026"; 84 days confirmed.
+  - MT3: S4 "Fully booked", option disabled.
+  - MT4: per-field messages on the client, and on the server with JavaScript off.
+  - MT6: O+ stock 14 → 15 after staff recorded Donated.
+  - MT7: aged 75 told to contact NZBS for Medical Officer authorisation.
+  - Access: donor on a staff page sent to Access Denied.
+  - MT5: register → dashboard → booking form → dashboard with confirmation, which is 3 screens before the confirmation. No newcomer took part.
+  - TC11 visual: deferral without a reason refused, but the message appeared on every row → **#43** (low, P3, deferred). The register now has 21 defects.

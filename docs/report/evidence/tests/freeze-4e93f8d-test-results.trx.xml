@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d7224337-214f-4a5b-aaf5-84ac4a762b40" name="@Shreyass-Mac-mini 2026-10-16 22:54:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-16T22:54:12.7838150+13:00" queuing="2026-10-16T22:54:12.7838150+13:00" start="2026-10-16T22:54:11.8144170+13:00" finish="2026-10-16T22:54:18.6917430+13:00" />
+  <TestSettings name="default" id="1775224e-c5ed-400a-94f6-0719c5ef81da">
+    <Deployment runDeploymentRoot="_Shreyass-Mac-mini_2026-10-16_22_54_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ef83e5f2-8d80-4bfe-9507-9880399012d0" testId="1a558d16-49c4-80c9-9c45-ca420fe3cf4b" testName="CountOn_CountsMultipleSessionsOnSameDate" computerName="Shreyass-Mac-mini" duration="00:00:00.0006149" startTime="2026-10-16T22:54:12.7719040+13:00" endTime="2026-10-16T22:54:12.7725580+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef83e5f2-8d80-4bfe-9507-9880399012d0" />
+    <UnitTestResult executionId="d77e667e-af80-412e-8941-ee7b6dca0708" testId="11279c74-f98d-89eb-aee2-72b0a733db3d" testName="DeferredWithReason_IsSaved" computerName="Shreyass-Mac-mini" duration="00:00:00.0678726" startTime="2026-10-16T22:54:18.1423080+13:00" endTime="2026-10-16T22:54:18.2104750+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d77e667e-af80-412e-8941-ee7b6dca0708" />
+    <UnitTestResult executionId="dbfcda08-6fcd-40e4-813e-3902332d6c3d" testId="162b0f5b-2fb0-81a0-845e-b76fd0eb0fb2" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Coordinator/Dashboard&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.0690074" startTime="2026-10-16T22:54:13.5804840+13:00" endTime="2026-10-16T22:54:13.6495260+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dbfcda08-6fcd-40e4-813e-3902332d6c3d" />
+    <UnitTestResult executionId="36c97fa3-29dc-456e-a4b6-d68222e47241" testId="111c46a8-8bc6-8fd8-9d1f-6d9ffc812da5" testName="DonorBelowMinimumWeight_CannotBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0361868" startTime="2026-10-16T22:54:16.5180060+13:00" endTime="2026-10-16T22:54:16.5542430+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36c97fa3-29dc-456e-a4b6-d68222e47241" />
+    <UnitTestResult executionId="0873d885-9bac-4da5-b067-867df7fec723" testId="1ef7999f-8268-8088-b85b-775c59c19132" testName="CheckAge_FirstTimeDonor_Age15_IsTooYoung" computerName="Shreyass-Mac-mini" duration="00:00:00.0000275" startTime="2026-10-16T22:54:12.7640510+13:00" endTime="2026-10-16T22:54:12.7640890+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0873d885-9bac-4da5-b067-867df7fec723" />
+    <UnitTestResult executionId="686f06af-8b55-4f32-b9a4-f8ebbb77ef0e" testId="1a779c24-0871-806d-8826-694c5f390434" testName="Calculate_ExcludesBookedAndCancelledFromDeferralRate" computerName="Shreyass-Mac-mini" duration="00:00:00.0027350" startTime="2026-10-16T22:54:12.7447520+13:00" endTime="2026-10-16T22:54:12.7544650+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="686f06af-8b55-4f32-b9a4-f8ebbb77ef0e" />
+    <UnitTestResult executionId="cb122660-eaa8-461b-ac3f-44f3bcd07b4c" testId="13defbbf-2f71-8539-ad41-82b8ce906a5d" testName="CountOn_WithNoSessions_ReturnsZero" computerName="Shreyass-Mac-mini" duration="00:00:00.0000352" startTime="2026-10-16T22:54:12.7744350+13:00" endTime="2026-10-16T22:54:12.7744780+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb122660-eaa8-461b-ac3f-44f3bcd07b4c" />
+    <UnitTestResult executionId="78b61118-c222-4573-af9b-77aa71c31524" testId="151b168f-ad54-8bea-ac0b-ef57aeb4cf3b" testName="CheckAge_FirstTimeDonor_Age17_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0003023" startTime="2026-10-16T22:54:12.7580040+13:00" endTime="2026-10-16T22:54:12.7583300+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78b61118-c222-4573-af9b-77aa71c31524" />
+    <UnitTestResult executionId="c468f57f-c14a-4ce9-a82a-c11ef17dc3b8" testId="11874f4e-1d64-8fd4-ad6b-bc451c8be444" testName="BookingEligibility_SmokeTest_RejectsShortDonationInterval" computerName="Shreyass-Mac-mini" duration="00:00:00.2710187" startTime="2026-10-16T22:54:14.9921450+13:00" endTime="2026-10-16T22:54:15.2632190+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c468f57f-c14a-4ce9-a82a-c11ef17dc3b8">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+&#xD;
+&#xD;
+TestContext Messages:&#xD;
+Smoke-test preparation: 0.01 s
+Smoke-test booking POST: 1.27 ms
+Overall smoke-test execution: 0.27 s</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7308cbc1-bcb2-4c6d-b094-d0c49221f4c0" testId="1dfe8ba5-0f98-89cb-a58c-4854f25b5567" testName="AnonymousOpensStaffOutcomeUrl_RedirectsToLogin" computerName="Shreyass-Mac-mini" duration="00:00:00.0369465" startTime="2026-10-16T22:54:12.7730930+13:00" endTime="2026-10-16T22:54:13.4148920+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7308cbc1-bcb2-4c6d-b094-d0c49221f4c0" />
+    <UnitTestResult executionId="0d289165-df7c-4bd5-9392-cc8d780a267a" testId="18e06e2c-cf58-8eee-80f4-1416c40b1748" testName="IsWeightEligible_50_1Kg_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000234" startTime="2026-10-16T22:54:12.7703550+13:00" endTime="2026-10-16T22:54:12.7703880+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d289165-df7c-4bd5-9392-cc8d780a267a" />
+    <UnitTestResult executionId="99fba7f3-fec5-43b8-bfc6-a342b6898d4b" testId="1ad06db9-ed4f-8359-aa53-cc4ba9c8654b" testName="CheckAge_FirstTimeDonor_Age72_IsTooOld" computerName="Shreyass-Mac-mini" duration="00:00:00.0000371" startTime="2026-10-16T22:54:12.7639630+13:00" endTime="2026-10-16T22:54:12.7640200+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99fba7f3-fec5-43b8-bfc6-a342b6898d4b" />
+    <UnitTestResult executionId="15c57027-10b5-4f9c-a097-d2e501b35286" testId="1c5412e6-1b2d-8ef7-bc4b-520c0c019ee4" testName="DonorCancelsOwnBooking_IsAllowed" computerName="Shreyass-Mac-mini" duration="00:00:00.0358104" startTime="2026-10-16T22:54:17.0177700+13:00" endTime="2026-10-16T22:54:17.0536230+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15c57027-10b5-4f9c-a097-d2e501b35286" />
+    <UnitTestResult executionId="d26b9627-7986-43a3-bd6d-1a5dd473aff1" testId="11855a68-d3c1-8fa4-8d8a-4360791163b6" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Coordinator/Dashboard&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.2012618" startTime="2026-10-16T22:54:12.7752930+13:00" endTime="2026-10-16T22:54:13.5795080+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d26b9627-7986-43a3-bd6d-1a5dd473aff1" />
+    <UnitTestResult executionId="6096a237-af63-4007-a734-004e16f99097" testId="17e1e4ae-2a5f-8c46-93eb-ea509e498cdd" testName="TC07b_ExistingDonorOn75thBirthday_IsToldToGetAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0327333" startTime="2026-10-16T22:54:15.6130760+13:00" endTime="2026-10-16T22:54:15.6458350+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6096a237-af63-4007-a734-004e16f99097" />
+    <UnitTestResult executionId="f8c917aa-c95e-4fd5-bdc3-c32115b20d47" testId="1344fb7e-55df-8a9c-bb25-df032a1b0233" testName="ExistingDonorDayBefore75thBirthday_CanBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0331871" startTime="2026-10-16T22:54:15.5796430+13:00" endTime="2026-10-16T22:54:15.6128700+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8c917aa-c95e-4fd5-bdc3-c32115b20d47" />
+    <UnitTestResult executionId="b131d8fb-8f6b-484b-b904-e304930ea5d9" testId="1aa9c375-e93f-8c99-8a2b-1ef3fe3f906e" testName="IsWeightEligible_51Kg_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000203" startTime="2026-10-16T22:54:12.7715470+13:00" endTime="2026-10-16T22:54:12.7715760+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b131d8fb-8f6b-484b-b904-e304930ea5d9" />
+    <UnitTestResult executionId="cd562606-8c15-4cb9-a7b5-9770f5ca9b8c" testId="137783a2-fedc-8832-905d-c742fb9f0383" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Donor/Booking/Book&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.2348515" startTime="2026-10-16T22:54:12.7751390+13:00" endTime="2026-10-16T22:54:13.6130110+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd562606-8c15-4cb9-a7b5-9770f5ca9b8c" />
+    <UnitTestResult executionId="5381aeea-b681-4105-83ab-f026664a1ae3" testId="1258e5b8-b908-86b0-9354-b8994f9103d8" testName="LoginWithWrongPassword_ShowsErrorAndStaysSignedOut" computerName="Shreyass-Mac-mini" duration="00:00:00.0403777" startTime="2026-10-16T22:54:13.6124660+13:00" endTime="2026-10-16T22:54:13.6559170+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5381aeea-b681-4105-83ab-f026664a1ae3" />
+    <UnitTestResult executionId="f463e5c6-f64c-4514-b5df-46c97fa7151c" testId="10603adc-50b3-8260-baa9-544f3e97288a" testName="BookingEligibility_20ConcurrentDonors_P95WithinTwoSeconds" computerName="Shreyass-Mac-mini" duration="00:00:01.3352707" startTime="2026-10-16T22:54:13.6562320+13:00" endTime="2026-10-16T22:54:14.9916160+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f463e5c6-f64c-4514-b5df-46c97fa7151c">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+&#xD;
+&#xD;
+TestContext Messages:&#xD;
+Host warm-up: 0.08 s
+Registration 1/20: 0.05 s
+Registration 2/20: 0.03 s
+Registration 3/20: 0.03 s
+Registration 4/20: 0.03 s
+Registration 5/20: 0.03 s
+Registration 6/20: 0.03 s
+Registration 7/20: 0.03 s
+Registration 8/20: 0.03 s
+Registration 9/20: 0.03 s
+Registration 10/20: 0.03 s
+Registration 11/20: 0.03 s
+Registration 12/20: 0.03 s
+Registration 13/20: 0.03 s
+Registration 14/20: 0.03 s
+Registration 15/20: 0.03 s
+Registration 16/20: 0.03 s
+Registration 17/20: 0.03 s
+Registration 18/20: 0.03 s
+Registration 19/20: 0.03 s
+Registration 20/20: 0.03 s
+All registrations: 0.67 s
+Round 1/10: preparation 0.04 s; concurrent POSTs 0.01 s; rejection checks 0.02 s; total 0.07 s
+Round 2/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 3/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 4/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 5/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 6/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 7/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 8/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 9/10: preparation 0.02 s; concurrent POSTs 0.00 s; rejection checks 0.02 s; total 0.04 s
+Round 10/10: preparation 0.01 s; concurrent POSTs 0.00 s; rejection checks 0.01 s; total 0.03 s
+Requests: 200 (20 concurrent x 10 rounds)
+Average response time: 1.73 ms
+Nearest-rank p95 response time: 5.56 ms (rank 190)
+Maximum response time: 6.25 ms
+Provisional P95 limit (NFR2 confirmation pending): 2000 ms
+Overall load-test execution: 1.33 s</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0b3da901-8c14-4d90-95d2-993b9e514117" testId="1cae1f66-f116-8f3c-a56b-a1e418b55aed" testName="CheckAge_FirstTimeDonor_Age16_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0003693" startTime="2026-10-16T22:54:12.7579180+13:00" endTime="2026-10-16T22:54:12.7583140+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b3da901-8c14-4d90-95d2-993b9e514117" />
+    <UnitTestResult executionId="7e6f9fd8-7d50-4613-86ce-2850c3f2c399" testId="1eda36dc-7066-8d92-90ac-97c48bb1090f" testName="Calculate_AveragesBookingLeadTimeAcrossAllAppointments" computerName="Shreyass-Mac-mini" duration="00:00:00.0026968" startTime="2026-10-16T22:54:12.7449200+13:00" endTime="2026-10-16T22:54:12.7544630+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e6f9fd8-7d50-4613-86ce-2850c3f2c399" />
+    <UnitTestResult executionId="dd649756-212c-458a-8924-f0b3dd404702" testId="12721624-524c-82ca-9381-6e5467a41c5c" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Staff/Dashboard&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.2012580" startTime="2026-10-16T22:54:12.7755190+13:00" endTime="2026-10-16T22:54:13.5795230+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd649756-212c-458a-8924-f0b3dd404702" />
+    <UnitTestResult executionId="4d7369da-7677-4fd9-916b-c23c4fb9c7a9" testId="1c5844a8-742b-8639-899d-24bb3ae633e1" testName="TC17_DonorOpensStaffOutcomeUrl_IsDenied" computerName="Shreyass-Mac-mini" duration="00:00:00.2020235" startTime="2026-10-16T22:54:12.7735240+13:00" endTime="2026-10-16T22:54:13.5793810+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d7369da-7677-4fd9-916b-c23c4fb9c7a9" />
+    <UnitTestResult executionId="54a57786-45e0-44f2-8030-48ccc85a28c7" testId="10fa17c4-ac46-8ecf-9c1e-ff0c2cb1839c" testName="StandDownEndDate_IsEventDatePlusDuration_AndIsTheFirstEligibleDay" computerName="Shreyass-Mac-mini" duration="00:00:00.0000932" startTime="2026-10-16T22:54:12.7725500+13:00" endTime="2026-10-16T22:54:12.7726990+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="54a57786-45e0-44f2-8030-48ccc85a28c7" />
+    <UnitTestResult executionId="53eb2cee-68b7-4b1b-ba14-5b551177ee28" testId="1a4a2cc1-e578-8967-aaf8-6ced4183de11" testName="DonorReschedulesAnotherDonorsBooking_IsDenied" computerName="Shreyass-Mac-mini" duration="00:00:00.0704333" startTime="2026-10-16T22:54:16.9469530+13:00" endTime="2026-10-16T22:54:17.0174270+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53eb2cee-68b7-4b1b-ba14-5b551177ee28" />
+    <UnitTestResult executionId="7a3f47d4-e2bb-4186-a56b-b13d73c516ec" testId="1681a5af-3a53-8844-bcc6-186777d0cd89" testName="Antiforgery_RecordOutcomeWithoutToken_IsRejected" computerName="Shreyass-Mac-mini" duration="00:00:00.0730046" startTime="2026-10-16T22:54:16.0965760+13:00" endTime="2026-10-16T22:54:16.1696240+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a3f47d4-e2bb-4186-a56b-b13d73c516ec" />
+    <UnitTestResult executionId="0049a8c5-77fd-41a6-ad8a-f3c77b465720" testId="155d897d-271e-84b2-ae7a-5374a72a63fa" testName="EarliestDonationDate_Is84DaysAfterLastDonation_AndIsTheFirstEligibleDay" computerName="Shreyass-Mac-mini" duration="00:00:00.0027184" startTime="2026-10-16T22:54:12.7453100+13:00" endTime="2026-10-16T22:54:12.7544670+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0049a8c5-77fd-41a6-ad8a-f3c77b465720" />
+    <UnitTestResult executionId="23c03281-33a2-427d-b058-fbe61deb16fe" testId="19038838-6a85-87f3-aad1-eb46beb9f010" testName="IsIntervalEligible_83DaysInterval_ReturnsFalse" computerName="Shreyass-Mac-mini" duration="00:00:00.0026862" startTime="2026-10-16T22:54:12.7455870+13:00" endTime="2026-10-16T22:54:12.7544480+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="23c03281-33a2-427d-b058-fbe61deb16fe" />
+    <UnitTestResult executionId="149034b9-329e-437d-9442-ee61edcec3a5" testId="1ae54c4d-c72a-8f97-9433-a0bbc16bbce4" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Donor/Dashboard&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.0498357" startTime="2026-10-16T22:54:13.5802040+13:00" endTime="2026-10-16T22:54:13.6300640+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="149034b9-329e-437d-9442-ee61edcec3a5" />
+    <UnitTestResult executionId="880fce46-3756-4144-9334-8d055f4569d1" testId="1e5ef678-412a-8e19-bbdb-e42f0d74436d" testName="AnonymousOpensHomePage_IsAllowed" computerName="Shreyass-Mac-mini" duration="00:00:00.1114856" startTime="2026-10-16T22:54:12.7745860+13:00" endTime="2026-10-16T22:54:13.4888510+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="880fce46-3756-4144-9334-8d055f4569d1" />
+    <UnitTestResult executionId="7026d90b-e962-49fe-aecc-5361ed96d85b" testId="1aef03e3-6f91-89db-b22f-73a12b619dbc" testName="FirstTimeDonorDayBefore71stBirthday_CanBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0406175" startTime="2026-10-16T22:54:15.5386550+13:00" endTime="2026-10-16T22:54:15.5793200+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7026d90b-e962-49fe-aecc-5361ed96d85b" />
+    <UnitTestResult executionId="cd10f8ff-f8e4-4b45-a5e3-4183b42345ad" testId="1c62e5ae-0569-8e0a-b4bf-69fe6d82778d" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Donor/Dashboard&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.0901507" startTime="2026-10-16T22:54:13.4891590+13:00" endTime="2026-10-16T22:54:13.5795080+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd10f8ff-f8e4-4b45-a5e3-4183b42345ad" />
+    <UnitTestResult executionId="45f6b9d9-e44d-49e3-a3fb-dbb4b040465f" testId="111ee9c3-a245-8b98-822a-2b52f33bcf0f" testName="IsStandDownCleared_OneDayBeforeStandDownEnds_ReturnsFalse" computerName="Shreyass-Mac-mini" duration="00:00:00.0000960" startTime="2026-10-16T22:54:12.7707720+13:00" endTime="2026-10-16T22:54:12.7708790+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45f6b9d9-e44d-49e3-a3fb-dbb4b040465f" />
+    <UnitTestResult executionId="f2b73661-956d-4b7d-9958-68dab5bf790a" testId="19a3bcc3-9af6-8712-866c-b55376d06679" testName="ExistingDonorDayBefore81stBirthday_IsToldToGetAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0332364" startTime="2026-10-16T22:54:15.6460410+13:00" endTime="2026-10-16T22:54:15.6793100+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2b73661-956d-4b7d-9958-68dab5bf790a" />
+    <UnitTestResult executionId="00227ead-16ee-432d-adac-e703a9e5c85f" testId="1f65026c-bbb3-8d33-868a-6bd64271af9f" testName="DonorWithLastDonationBeforeMinimumInterval_CannotBook" computerName="Shreyass-Mac-mini" duration="00:00:00.1200926" startTime="2026-10-16T22:54:16.2067290+13:00" endTime="2026-10-16T22:54:16.4809440+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="00227ead-16ee-432d-adac-e703a9e5c85f">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="417560be-a331-47ba-81f3-0dbd80cfcebb" testId="1c16f1d1-49b4-8100-9ee5-a59bbed37b11" testName="Antiforgery_CancelWithoutToken_IsRejected" computerName="Shreyass-Mac-mini" duration="00:00:00.1265941" startTime="2026-10-16T22:54:15.8132260+13:00" endTime="2026-10-16T22:54:16.0962430+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="417560be-a331-47ba-81f3-0dbd80cfcebb">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="637239ef-c252-4e47-8c49-72bf1554b0f0" testId="16c167ed-92cf-89f2-9bdc-02cdc171d53f" testName="IsWeightEligible_49Kg_ReturnsFalse" computerName="Shreyass-Mac-mini" duration="00:00:00.0000247" startTime="2026-10-16T22:54:12.7712470+13:00" endTime="2026-10-16T22:54:12.7712950+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="637239ef-c252-4e47-8c49-72bf1554b0f0" />
+    <UnitTestResult executionId="fb9f6805-85e1-4191-8a1d-009e04949a65" testId="170b37c2-11cd-81c1-84f9-55d03722db71" testName="CheckAge_ExistingDonor_Age81_IsTooOld" computerName="Shreyass-Mac-mini" duration="00:00:00.0000282" startTime="2026-10-16T22:54:12.7653470+13:00" endTime="2026-10-16T22:54:12.7653870+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fb9f6805-85e1-4191-8a1d-009e04949a65" />
+    <UnitTestResult executionId="7d926376-7301-4749-9ba0-1e59613852db" testId="1abe0abc-4b91-8c30-8fa5-d774feec6250" testName="IsStandDownCleared_OneDayAfterStandDownEnds_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000461" startTime="2026-10-16T22:54:12.7721240+13:00" endTime="2026-10-16T22:54:12.7721840+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d926376-7301-4749-9ba0-1e59613852db" />
+    <UnitTestResult executionId="1c3b06aa-fb7a-45ab-8ba1-c022168404d9" testId="17f2cea7-5c7c-87d1-a7e4-8a7d88d32a74" testName="TC07b_CheckAge_ExistingDonor_Age75_NeedsAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0000280" startTime="2026-10-16T22:54:12.7656440+13:00" endTime="2026-10-16T22:54:12.7656820+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c3b06aa-fb7a-45ab-8ba1-c022168404d9" />
+    <UnitTestResult executionId="de270fb5-c7d5-4d7d-82a0-168cc8d692fb" testId="1e1d4456-fb87-82eb-af8d-0b6d9b80fbeb" testName="IsStandDownCleared_NoStandDownEvent_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000741" startTime="2026-10-16T22:54:12.7705250+13:00" endTime="2026-10-16T22:54:12.7706070+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de270fb5-c7d5-4d7d-82a0-168cc8d692fb" />
+    <UnitTestResult executionId="b38cb045-e500-43a1-8a2b-ab556ec3f059" testId="1b9508bb-350d-820a-9572-279e704ab0be" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Coordinator/Dashboard&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.0509127" startTime="2026-10-16T22:54:13.5809540+13:00" endTime="2026-10-16T22:54:13.6319390+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b38cb045-e500-43a1-8a2b-ab556ec3f059" />
+    <UnitTestResult executionId="9fd6e6d2-0d74-4059-9a00-7d7aa615bb49" testId="1cefeb9c-5958-828c-b66a-f96acffb66e4" testName="TC18_StaffRecordOutcome_LoadsClientValidation" computerName="Shreyass-Mac-mini" duration="00:00:00.0878209" startTime="2026-10-16T22:54:17.3817630+13:00" endTime="2026-10-16T22:54:17.4696240+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9fd6e6d2-0d74-4059-9a00-7d7aa615bb49" />
+    <UnitTestResult executionId="22b1ef04-131c-4331-92a2-7fe15707993a" testId="1cca190a-4c8c-84cd-aaff-7d08644233df" testName="DonorBelowMinimumAge_CannotBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0351753" startTime="2026-10-16T22:54:16.5544810+13:00" endTime="2026-10-16T22:54:16.5896970+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22b1ef04-131c-4331-92a2-7fe15707993a" />
+    <UnitTestResult executionId="cb48f522-4039-49b4-ae5d-f27d879f9ed5" testId="1286bfc3-067b-8f41-8648-20f548a37753" testName="TC18_DonorBook_LoadsClientValidation" computerName="Shreyass-Mac-mini" duration="00:00:00.1042486" startTime="2026-10-16T22:54:17.1214420+13:00" endTime="2026-10-16T22:54:17.3814150+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb48f522-4039-49b4-ae5d-f27d879f9ed5">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5d1dd5e1-10b9-4332-bb05-0fdb329b89d7" testId="1e7154fd-b8c5-8ebf-a5ba-56487be741f6" testName="DonorBooking_AppearsOnStaffBookingsPage_WithOutcomeForm" computerName="Shreyass-Mac-mini" duration="00:00:00.1628953" startTime="2026-10-16T22:54:17.5077670+13:00" endTime="2026-10-16T22:54:17.8240610+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d1dd5e1-10b9-4332-bb05-0fdb329b89d7">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5d6a1aff-ce07-42ed-bbf5-06698998c08b" testId="1e43bbf5-f2f5-82e9-8770-b3f2d2d6060a" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Staff/Dashboard&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.2418272" startTime="2026-10-16T22:54:12.7757860+13:00" endTime="2026-10-16T22:54:13.6262620+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d6a1aff-ce07-42ed-bbf5-06698998c08b" />
+    <UnitTestResult executionId="fe1186ec-904d-4914-b31f-c9d3bf1b24a2" testId="1d1aabbe-3515-89f7-a73c-d3bf9c83bc3c" testName="DonorCancelsAnotherDonorsBooking_IsDenied" computerName="Shreyass-Mac-mini" duration="00:00:00.1574467" startTime="2026-10-16T22:54:16.6274790+13:00" endTime="2026-10-16T22:54:16.9466210+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fe1186ec-904d-4914-b31f-c9d3bf1b24a2">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="677ce783-4eae-4daa-b6ca-f3c000aae705" testId="1e22a03a-f460-8567-ba17-736e56c186a6" testName="MinimumAgeDate_Is16thBirthday_AndIsTheFirstEligibleDay" computerName="Shreyass-Mac-mini" duration="00:00:00.0000810" startTime="2026-10-16T22:54:12.7666060+13:00" endTime="2026-10-16T22:54:12.7666940+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="677ce783-4eae-4daa-b6ca-f3c000aae705" />
+    <UnitTestResult executionId="b6b13e40-34d5-4519-8502-8931987af787" testId="1911bc24-b323-8421-b935-0d8eaeb89f20" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Coordinator&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.0568455" startTime="2026-10-16T22:54:13.5799730+13:00" endTime="2026-10-16T22:54:13.6368740+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b6b13e40-34d5-4519-8502-8931987af787" />
+    <UnitTestResult executionId="16335759-a423-494e-ad63-35e94a62956a" testId="110193a2-3c89-8eea-a912-6071693e57e4" testName="DonorAtMinimumDonationInterval_CanBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0362918" startTime="2026-10-16T22:54:16.4812990+13:00" endTime="2026-10-16T22:54:16.5176430+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="16335759-a423-494e-ad63-35e94a62956a" />
+    <UnitTestResult executionId="43e67710-c1be-42c0-88f2-7aadbbd04ea5" testId="1e4ada3c-10e5-83fc-9e03-36cbcf1da8bc" testName="IsAgeEligible_IsTrueOnlyWhenCheckAgeIsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000769" startTime="2026-10-16T22:54:12.7698260+13:00" endTime="2026-10-16T22:54:12.7699230+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43e67710-c1be-42c0-88f2-7aadbbd04ea5" />
+    <UnitTestResult executionId="3bbd78f3-d2a7-4ee8-817b-acd403f8f199" testId="1ca98054-21e3-859f-8b88-fa8a420486ec" testName="DonorWithActiveStandDown_CannotBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0356206" startTime="2026-10-16T22:54:16.5899470+13:00" endTime="2026-10-16T22:54:16.6258710+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bbd78f3-d2a7-4ee8-817b-acd403f8f199" />
+    <UnitTestResult executionId="f2ad956c-e6de-4eae-9d4b-277be4a146c0" testId="16101a3f-31c6-8185-aa1d-e0361f873584" testName="CheckAge_LapsedDonor_Age71_NeedsAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0000357" startTime="2026-10-16T22:54:12.7660610+13:00" endTime="2026-10-16T22:54:12.7661070+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2ad956c-e6de-4eae-9d4b-277be4a146c0" />
+    <UnitTestResult executionId="86286e1c-a2f0-4809-a136-a9442edc5753" testId="1f53cdc8-37b8-8385-ac74-1804f83fa44c" testName="StandDownEnteredByAnotherDonor_DoesNotBlockThisDonor" computerName="Shreyass-Mac-mini" duration="00:00:00.0724702" startTime="2026-10-16T22:54:18.4692970+13:00" endTime="2026-10-16T22:54:18.5423510+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="86286e1c-a2f0-4809-a136-a9442edc5753" />
+    <UnitTestResult executionId="08bbdc16-f86e-4e4f-a8cb-ea4fbb50767f" testId="186c407a-0c4c-887b-a7c4-f63c0a2d6424" testName="ExistingDonorOn81stBirthday_IsRefused" computerName="Shreyass-Mac-mini" duration="00:00:00.0330580" startTime="2026-10-16T22:54:15.6795410+13:00" endTime="2026-10-16T22:54:15.7126360+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08bbdc16-f86e-4e4f-a8cb-ea4fbb50767f" />
+    <UnitTestResult executionId="25854f16-729d-4902-913c-49ce4682c917" testId="11c1ea64-653d-8d10-a4af-6926df031c46" testName="IsIntervalEligible_84DaysInterval_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0027423" startTime="2026-10-16T22:54:12.7452080+13:00" endTime="2026-10-16T22:54:12.7544480+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25854f16-729d-4902-913c-49ce4682c917" />
+    <UnitTestResult executionId="eef0b5b0-7859-41c8-a281-a4e9d57619ec" testId="11b12146-23b3-81bc-bf8f-1dba3dda3f1d" testName="Calculate_WithOnlyBookedAndCancelledAppointments_ReturnsZeroDeferralRateAndIncludesLeadTimes" computerName="Shreyass-Mac-mini" duration="00:00:00.0027257" startTime="2026-10-16T22:54:12.7454070+13:00" endTime="2026-10-16T22:54:12.7544660+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eef0b5b0-7859-41c8-a281-a4e9d57619ec" />
+    <UnitTestResult executionId="5a8e59c9-9f60-435a-9b70-3b21e1c8c25d" testId="15440eda-ed9f-87cc-9d03-f9d3290d025a" testName="TC18_Register_LoadsClientValidation" computerName="Shreyass-Mac-mini" duration="00:00:00.0010988" startTime="2026-10-16T22:54:17.5061810+13:00" endTime="2026-10-16T22:54:17.5075670+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a8e59c9-9f60-435a-9b70-3b21e1c8c25d" />
+    <UnitTestResult executionId="a3ef1144-7151-4ed5-8f16-446bc0e1c420" testId="1298483d-d580-8e75-8a40-55c77bf2367b" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Coordinator&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.2011944" startTime="2026-10-16T22:54:12.7756390+13:00" endTime="2026-10-16T22:54:13.5794920+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3ef1144-7151-4ed5-8f16-446bc0e1c420" />
+    <UnitTestResult executionId="1d9b361d-e6b4-43b1-ab41-3e145a0a3895" testId="11c1ba9f-93e3-837d-aa68-b84ee2e83c13" testName="CountOn_OnlyCountsSessionsOnRequestedDate" computerName="Shreyass-Mac-mini" duration="00:00:00.0001012" startTime="2026-10-16T22:54:12.7742580+13:00" endTime="2026-10-16T22:54:12.7743690+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1d9b361d-e6b4-43b1-ab41-3e145a0a3895" />
+    <UnitTestResult executionId="bbd0adaf-a52f-4583-aa7d-58e0e4099773" testId="16a53037-0743-8825-9570-e551514f54a2" testName="StaffOpensStaffOutcomeUrl_IsAllowed" computerName="Shreyass-Mac-mini" duration="00:00:00.2343556" startTime="2026-10-16T22:54:12.7728910+13:00" endTime="2026-10-16T22:54:13.6115340+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbd0adaf-a52f-4583-aa7d-58e0e4099773">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8b091d35-80bb-43a2-9ce4-cf3707c0cc59" testId="114c4724-969d-8eba-8eb9-eeca9ed0bf23" testName="CheckAge_ExistingDonor_Age100_IsTooOld" computerName="Shreyass-Mac-mini" duration="00:00:00.0000247" startTime="2026-10-16T22:54:12.7657800+13:00" endTime="2026-10-16T22:54:12.7658120+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b091d35-80bb-43a2-9ce4-cf3707c0cc59" />
+    <UnitTestResult executionId="a9673f5d-c1a6-4ed6-bd18-504161d38ee8" testId="102a03cb-bd11-85b6-b28d-cdab966db581" testName="CheckAge_Age72_DonatedExactlyTwoYearsAgo_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000290" startTime="2026-10-16T22:54:12.7663340+13:00" endTime="2026-10-16T22:54:12.7663700+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a9673f5d-c1a6-4ed6-bd18-504161d38ee8" />
+    <UnitTestResult executionId="63c9c595-cbc7-4737-8657-48e751bd94a9" testId="1215277a-a77f-883d-afd3-fc41734689dd" testName="TC11_DeferredWithoutReason_IsRejected" computerName="Shreyass-Mac-mini" duration="00:00:00.1565755" startTime="2026-10-16T22:54:17.8248050+13:00" endTime="2026-10-16T22:54:18.1420780+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63c9c595-cbc7-4737-8657-48e751bd94a9">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="27ff80cd-e19f-4827-ac9d-deff569a4a1b" testId="1d30f5f1-aef3-8956-98ed-5fba7784cd89" testName="LapsedDonorDayBefore71stBirthday_CanBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0328627" startTime="2026-10-16T22:54:15.7128670+13:00" endTime="2026-10-16T22:54:15.7457580+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27ff80cd-e19f-4827-ac9d-deff569a4a1b" />
+    <UnitTestResult executionId="491e21f7-9804-4404-9f4a-19fa45f147e1" testId="1c2301bc-e95e-8d98-a600-441ff6acac8b" testName="IsStandDownCleared_OnStandDownEndDate_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000330" startTime="2026-10-16T22:54:12.7710620+13:00" endTime="2026-10-16T22:54:12.7711030+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="491e21f7-9804-4404-9f4a-19fa45f147e1" />
+    <UnitTestResult executionId="793c7609-d9a0-4b2e-8240-1d5224d1a8a6" testId="185dd44b-4037-8f3c-b7ab-d868dd720ff2" testName="TC07a_CheckAge_FirstTimeDonor_Age71_IsTooOld" computerName="Shreyass-Mac-mini" duration="00:00:00.0000799" startTime="2026-10-16T22:54:12.7582220+13:00" endTime="2026-10-16T22:54:12.7583150+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="793c7609-d9a0-4b2e-8240-1d5224d1a8a6" />
+    <UnitTestResult executionId="6513c6ab-e1f9-4fea-b75a-ab23688ddbed" testId="1acbf6fa-13fc-8951-8079-bc41413d1e21" testName="CheckAge_LapsedDonor_Age81_IsTooOld" computerName="Shreyass-Mac-mini" duration="00:00:00.0000256" startTime="2026-10-16T22:54:12.7661500+13:00" endTime="2026-10-16T22:54:12.7661840+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6513c6ab-e1f9-4fea-b75a-ab23688ddbed" />
+    <UnitTestResult executionId="1e7ac2bc-6e56-4bb3-9a84-57c552c2ce74" testId="16200568-50f1-8f4b-9c13-55feb89a63ae" testName="LapsedDonorOn71stBirthday_IsToldToGetAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0325280" startTime="2026-10-16T22:54:15.7459500+13:00" endTime="2026-10-16T22:54:15.7785020+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e7ac2bc-6e56-4bb3-9a84-57c552c2ce74" />
+    <UnitTestResult executionId="636afa62-fceb-4112-b652-f01ef0701239" testId="123b1d7e-7d68-89f6-aee1-3d5e2f51d772" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Staff/Bookings/SetOutcome/1&quot;,False)" computerName="Shreyass-Mac-mini" duration="00:00:00.0478122" startTime="2026-10-16T22:54:13.5819270+13:00" endTime="2026-10-16T22:54:13.6297740+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="636afa62-fceb-4112-b652-f01ef0701239" />
+    <UnitTestResult executionId="4bf17be9-9d59-48a8-9d75-295cb3b9f3fa" testId="11abc900-6295-89dc-8d4f-4e129053c41c" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Donor/Dashboard&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.2411954" startTime="2026-10-16T22:54:12.7748310+13:00" endTime="2026-10-16T22:54:13.6193630+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4bf17be9-9d59-48a8-9d75-295cb3b9f3fa" />
+    <UnitTestResult executionId="3bb5d10a-a806-42a5-9ff8-647900b43880" testId="17a0b49b-456b-8dce-bbec-b46f4c7df4c5" testName="DonorDashboard_DoesNotShowAnotherDonorsBooking" computerName="Shreyass-Mac-mini" duration="00:00:00.0671824" startTime="2026-10-16T22:54:17.0538470+13:00" endTime="2026-10-16T22:54:17.1211930+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bb5d10a-a806-42a5-9ff8-647900b43880" />
+    <UnitTestResult executionId="c509b4f1-367b-4298-b5fe-8bbbba0cbea8" testId="17dbd6fa-f891-8b65-86a2-0a1d39e6ea4f" testName="IsWeightEligible_49_9Kg_ReturnsFalse" computerName="Shreyass-Mac-mini" duration="00:00:00.0000391" startTime="2026-10-16T22:54:12.7701810+13:00" endTime="2026-10-16T22:54:12.7702300+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c509b4f1-367b-4298-b5fe-8bbbba0cbea8" />
+    <UnitTestResult executionId="894f1cac-b6fe-4003-823e-5af918b77791" testId="13f6b1bf-6efa-809b-b61a-e14dc831e680" testName="CheckAge_ExistingDonor_Age72_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000277" startTime="2026-10-16T22:54:12.7643210+13:00" endTime="2026-10-16T22:54:12.7643590+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="894f1cac-b6fe-4003-823e-5af918b77791" />
+    <UnitTestResult executionId="73aac6b9-badd-445d-a311-c18bdc820bad" testId="1db7bc52-05ab-8ce2-bb32-ef7fc40df544" testName="CheckAge_Age72_DonatedTwoYearsAndOneDayAgo_NeedsAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0000374" startTime="2026-10-16T22:54:12.7664270+13:00" endTime="2026-10-16T22:54:12.7664730+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73aac6b9-badd-445d-a311-c18bdc820bad" />
+    <UnitTestResult executionId="0a2c8aa8-f8eb-4647-bf91-fd02b7c5f0e8" testId="17beb6c9-8ca4-82d4-9763-41f10609c246" testName="TC09_IsIntervalEligible_NoPreviousDonation_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0026727" startTime="2026-10-16T22:54:12.7454990+13:00" endTime="2026-10-16T22:54:12.7544580+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a2c8aa8-f8eb-4647-bf91-fd02b7c5f0e8" />
+    <UnitTestResult executionId="4ba30b74-f8a1-4cd5-8624-4c57ba7b9ee8" testId="1734d053-36fa-8c9a-a7d9-6ee92d8b8926" testName="IsIntervalEligible_85DaysInterval_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0027014" startTime="2026-10-16T22:54:12.7450270+13:00" endTime="2026-10-16T22:54:12.7544610+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ba30b74-f8a1-4cd5-8624-4c57ba7b9ee8" />
+    <UnitTestResult executionId="e95517eb-1eb0-4708-b803-d9edd53f38cf" testId="1984ef51-54de-8373-b6fb-d4472f306692" testName="TC07a_FirstTimeDonorOn71stBirthday_IsRefused" computerName="Shreyass-Mac-mini" duration="00:00:00.1137673" startTime="2026-10-16T22:54:15.2635140+13:00" endTime="2026-10-16T22:54:15.5382860+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e95517eb-1eb0-4708-b803-d9edd53f38cf">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dbe79dde-8f22-424c-a060-657c24f2a5ef" testId="16b5d245-8c45-8458-8a2d-b7a4f71c634f" testName="DonorWhoDonatedExactlyTwoYearsAgo_Aged72_CanBook" computerName="Shreyass-Mac-mini" duration="00:00:00.0336492" startTime="2026-10-16T22:54:15.7791300+13:00" endTime="2026-10-16T22:54:15.8129530+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dbe79dde-8f22-424c-a060-657c24f2a5ef" />
+    <UnitTestResult executionId="61a4cae7-7da1-4b45-af98-56191160bdc1" testId="17419ae9-37c2-8796-88bb-1d8949611c3e" testName="IsStandDownCleared_DuringStandDown_ReturnsFalse" computerName="Shreyass-Mac-mini" duration="00:00:00.0000330" startTime="2026-10-16T22:54:12.7726720+13:00" endTime="2026-10-16T22:54:12.7727160+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61a4cae7-7da1-4b45-af98-56191160bdc1" />
+    <UnitTestResult executionId="92257a85-3500-4314-ae9c-c5844ebc7bbf" testId="12f19ea9-2a11-83b4-bb8f-d23674a2e98b" testName="CheckAge_ExistingDonor_DayBefore75thBirthday_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000267" startTime="2026-10-16T22:54:12.7652600+13:00" endTime="2026-10-16T22:54:12.7652970+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92257a85-3500-4314-ae9c-c5844ebc7bbf" />
+    <UnitTestResult executionId="cada847a-ad9b-4a78-8f1b-e05957df11b6" testId="15720df8-2b08-81d3-b9e1-7f889573c437" testName="CheckAge_ExistingDonor_DayBefore81stBirthday_NeedsAuthorisation" computerName="Shreyass-Mac-mini" duration="00:00:00.0000280" startTime="2026-10-16T22:54:12.7646680+13:00" endTime="2026-10-16T22:54:12.7647050+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cada847a-ad9b-4a78-8f1b-e05957df11b6" />
+    <UnitTestResult executionId="85fb595b-3e67-4706-8c0b-97dcd2ecac5f" testId="1fb246b6-2bf9-83f6-95ae-2eb5dfa2d8f6" testName="IsWeightEligible_50Kg_ReturnsTrue" computerName="Shreyass-Mac-mini" duration="00:00:00.0000200" startTime="2026-10-16T22:54:12.7706100+13:00" endTime="2026-10-16T22:54:12.7706380+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="85fb595b-3e67-4706-8c0b-97dcd2ecac5f" />
+    <UnitTestResult executionId="0d274c2b-fb08-42fb-ab9b-713e1f8480ff" testId="1c7d9aaa-5a6d-82c8-871d-64bc11abcfb9" testName="Calculate_WithNoAppointments_ReturnsZeroMetrics" computerName="Shreyass-Mac-mini" duration="00:00:00.0027157" startTime="2026-10-16T22:54:12.7451190+13:00" endTime="2026-10-16T22:54:12.7544480+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d274c2b-fb08-42fb-ab9b-713e1f8480ff" />
+    <UnitTestResult executionId="5862180e-f1b3-4b51-9765-8ffb57f23381" testId="1fa181aa-69c4-8fc3-8a99-ed2f01239eb6" testName="CheckAge_FirstTimeDonor_DayBefore71stBirthday_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0001739" startTime="2026-10-16T22:54:12.7581360+13:00" endTime="2026-10-16T22:54:12.7583390+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5862180e-f1b3-4b51-9765-8ffb57f23381" />
+    <UnitTestResult executionId="7f22c073-ba0c-4727-ab58-e837984fc6d9" testId="123a90fa-1892-8db3-b0ca-2d30fb6b0c9c" testName="CheckAge_LapsedDonor_DayBefore71stBirthday_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000405" startTime="2026-10-16T22:54:12.7658750+13:00" endTime="2026-10-16T22:54:12.7659270+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f22c073-ba0c-4727-ab58-e837984fc6d9" />
+    <UnitTestResult executionId="559f7cce-7ad7-474c-bcfe-2042f1cfa641" testId="1c645249-f4f8-804e-8e03-2d793550663d" testName="CalculateAge_DayBeforeBirthday_ReturnsPreviousAge" computerName="Shreyass-Mac-mini" duration="00:00:00.0001228" startTime="2026-10-16T22:54:12.7708590+13:00" endTime="2026-10-16T22:54:12.7709940+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="559f7cce-7ad7-474c-bcfe-2042f1cfa641" />
+    <UnitTestResult executionId="5fe21763-9403-4013-bf71-6fccd3806307" testId="1c0fb096-744c-891c-bef1-e9f6290fbded" testName="CheckAge_ExistingDonor_Age15_IsTooYoung" computerName="Shreyass-Mac-mini" duration="00:00:00.0000319" startTime="2026-10-16T22:54:12.7641460+13:00" endTime="2026-10-16T22:54:12.7641880+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5fe21763-9403-4013-bf71-6fccd3806307" />
+    <UnitTestResult executionId="31e7084c-6ea8-4d36-a8b3-8d25a74f0b66" testId="19228cb6-a4b9-8c2b-be4f-99473a6ce70d" testName="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Staff/Sessions&quot;,True)" computerName="Shreyass-Mac-mini" duration="00:00:00.2083029" startTime="2026-10-16T22:54:13.4158880+13:00" endTime="2026-10-16T22:54:13.6242480+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="31e7084c-6ea8-4d36-a8b3-8d25a74f0b66" />
+    <UnitTestResult executionId="d254c0d0-185b-4b1b-b2e5-f04f04320dd6" testId="128d3fdc-ff2e-84f5-aa5e-719e36ecda59" testName="TC18_StaffSessions_LoadsClientValidation" computerName="Shreyass-Mac-mini" duration="00:00:00.0360124" startTime="2026-10-16T22:54:17.4699100+13:00" endTime="2026-10-16T22:54:17.5059590+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d254c0d0-185b-4b1b-b2e5-f04f04320dd6" />
+    <UnitTestResult executionId="db5cf7ce-779b-48de-83bc-8e9f57a22130" testId="1d772d01-3803-881a-af01-b088e11fc61b" testName="TC08_StandDownEnteredEarlier_StillBlocksBookingWithoutIt" computerName="Shreyass-Mac-mini" duration="00:00:00.1060390" startTime="2026-10-16T22:54:18.2107860+13:00" endTime="2026-10-16T22:54:18.4690490+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db5cf7ce-779b-48de-83bc-8e9f57a22130">
+      <Output>
+        <StdOut>info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 2 entities to in-memory store.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Web</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4dc68872-56ac-4467-829b-fa186a20f2f4" testId="14196e1d-b45e-8ea6-bc82-4d52bf89956c" testName="Antiforgery_CancelWithToken_Works" computerName="Shreyass-Mac-mini" duration="00:00:00.0362275" startTime="2026-10-16T22:54:16.1699310+13:00" endTime="2026-10-16T22:54:16.2064970+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4dc68872-56ac-4467-829b-fa186a20f2f4" />
+    <UnitTestResult executionId="be67ddd6-37c4-4330-886b-2101cc908d16" testId="1b0d271f-0288-86b8-b0b1-fe3012d58c09" testName="CheckAge_ExistingDonor_Age16_IsEligible" computerName="Shreyass-Mac-mini" duration="00:00:00.0000492" startTime="2026-10-16T22:54:12.7642330+13:00" endTime="2026-10-16T22:54:12.7642910+13:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be67ddd6-37c4-4330-886b-2101cc908d16" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Staff/Dashboard&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="12721624-524c-82ca-9381-6e5467a41c5c">
+      <Execution id="dd649756-212c-458a-8924-f0b3dd404702" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="DonorCancelsAnotherDonorsBooking_IsDenied" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1d1aabbe-3515-89f7-a73c-d3bf9c83bc3c">
+      <Execution id="fe1186ec-904d-4914-b31f-c9d3bf1b24a2" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingOwnershipTests" name="DonorCancelsAnotherDonorsBooking_IsDenied" />
+    </UnitTest>
+    <UnitTest name="ExistingDonorDayBefore75thBirthday_CanBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1344fb7e-55df-8a9c-bb25-df032a1b0233">
+      <Execution id="f8c917aa-c95e-4fd5-bdc3-c32115b20d47" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="ExistingDonorDayBefore75thBirthday_CanBook" />
+    </UnitTest>
+    <UnitTest name="TC18_DonorBook_LoadsClientValidation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1286bfc3-067b-8f41-8648-20f548a37753">
+      <Execution id="cb48f522-4039-49b4-ae5d-f27d879f9ed5" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.ClientValidationTests" name="TC18_DonorBook_LoadsClientValidation" />
+    </UnitTest>
+    <UnitTest name="IsWeightEligible_49Kg_ReturnsFalse" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="16c167ed-92cf-89f2-9bdc-02cdc171d53f">
+      <Execution id="637239ef-c252-4e47-8c49-72bf1554b0f0" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsWeightEligible_49Kg_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="CalculateAge_DayBeforeBirthday_ReturnsPreviousAge" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c645249-f4f8-804e-8e03-2d793550663d">
+      <Execution id="559f7cce-7ad7-474c-bcfe-2042f1cfa641" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CalculateAge_DayBeforeBirthday_ReturnsPreviousAge" />
+    </UnitTest>
+    <UnitTest name="TC07b_ExistingDonorOn75thBirthday_IsToldToGetAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17e1e4ae-2a5f-8c46-93eb-ea509e498cdd">
+      <Execution id="6096a237-af63-4007-a734-004e16f99097" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="TC07b_ExistingDonorOn75thBirthday_IsToldToGetAuthorisation" />
+    </UnitTest>
+    <UnitTest name="IsStandDownCleared_DuringStandDown_ReturnsFalse" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17419ae9-37c2-8796-88bb-1d8949611c3e">
+      <Execution id="61a4cae7-7da1-4b45-af98-56191160bdc1" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsStandDownCleared_DuringStandDown_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_Age100_IsTooOld" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="114c4724-969d-8eba-8eb9-eeca9ed0bf23">
+      <Execution id="8b091d35-80bb-43a2-9ce4-cf3707c0cc59" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_Age100_IsTooOld" />
+    </UnitTest>
+    <UnitTest name="DonorReschedulesAnotherDonorsBooking_IsDenied" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1a4a2cc1-e578-8967-aaf8-6ced4183de11">
+      <Execution id="53eb2cee-68b7-4b1b-ba14-5b551177ee28" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingOwnershipTests" name="DonorReschedulesAnotherDonorsBooking_IsDenied" />
+    </UnitTest>
+    <UnitTest name="LoginWithWrongPassword_ShowsErrorAndStaysSignedOut" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1258e5b8-b908-86b0-9354-b8994f9103d8">
+      <Execution id="5381aeea-b681-4105-83ab-f026664a1ae3" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="LoginWithWrongPassword_ShowsErrorAndStaysSignedOut" />
+    </UnitTest>
+    <UnitTest name="FirstTimeDonorDayBefore71stBirthday_CanBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1aef03e3-6f91-89db-b22f-73a12b619dbc">
+      <Execution id="7026d90b-e962-49fe-aecc-5361ed96d85b" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="FirstTimeDonorDayBefore71stBirthday_CanBook" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Donor/Dashboard&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1ae54c4d-c72a-8f97-9433-a0bbc16bbce4">
+      <Execution id="149034b9-329e-437d-9442-ee61edcec3a5" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_FirstTimeDonor_Age16_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1cae1f66-f116-8f3c-a56b-a1e418b55aed">
+      <Execution id="0b3da901-8c14-4d90-95d2-993b9e514117" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_FirstTimeDonor_Age16_IsEligible" />
+    </UnitTest>
+    <UnitTest name="DonorAtMinimumDonationInterval_CanBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="110193a2-3c89-8eea-a912-6071693e57e4">
+      <Execution id="16335759-a423-494e-ad63-35e94a62956a" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingEligibilityTests" name="DonorAtMinimumDonationInterval_CanBook" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Coordinator&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1298483d-d580-8e75-8a40-55c77bf2367b">
+      <Execution id="a3ef1144-7151-4ed5-8f16-446bc0e1c420" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="Calculate_ExcludesBookedAndCancelledFromDeferralRate" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1a779c24-0871-806d-8826-694c5f390434">
+      <Execution id="686f06af-8b55-4f32-b9a4-f8ebbb77ef0e" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.AppointmentAnalyticsServiceTests" name="Calculate_ExcludesBookedAndCancelledFromDeferralRate" />
+    </UnitTest>
+    <UnitTest name="IsAgeEligible_IsTrueOnlyWhenCheckAgeIsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e4ada3c-10e5-83fc-9e03-36cbcf1da8bc">
+      <Execution id="43e67710-c1be-42c0-88f2-7aadbbd04ea5" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsAgeEligible_IsTrueOnlyWhenCheckAgeIsEligible" />
+    </UnitTest>
+    <UnitTest name="DonorBelowMinimumAge_CannotBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1cca190a-4c8c-84cd-aaff-7d08644233df">
+      <Execution id="22b1ef04-131c-4331-92a2-7fe15707993a" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingEligibilityTests" name="DonorBelowMinimumAge_CannotBook" />
+    </UnitTest>
+    <UnitTest name="DonorWithActiveStandDown_CannotBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1ca98054-21e3-859f-8b88-fa8a420486ec">
+      <Execution id="3bbd78f3-d2a7-4ee8-817b-acd403f8f199" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingEligibilityTests" name="DonorWithActiveStandDown_CannotBook" />
+    </UnitTest>
+    <UnitTest name="StandDownEnteredByAnotherDonor_DoesNotBlockThisDonor" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1f53cdc8-37b8-8385-ac74-1804f83fa44c">
+      <Execution id="86286e1c-a2f0-4809-a136-a9442edc5753" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.StandDownRecordTests" name="StandDownEnteredByAnotherDonor_DoesNotBlockThisDonor" />
+    </UnitTest>
+    <UnitTest name="IsStandDownCleared_NoStandDownEvent_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e1d4456-fb87-82eb-af8d-0b6d9b80fbeb">
+      <Execution id="de270fb5-c7d5-4d7d-82a0-168cc8d692fb" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsStandDownCleared_NoStandDownEvent_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="CheckAge_LapsedDonor_Age81_IsTooOld" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1acbf6fa-13fc-8951-8079-bc41413d1e21">
+      <Execution id="6513c6ab-e1f9-4fea-b75a-ab23688ddbed" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_LapsedDonor_Age81_IsTooOld" />
+    </UnitTest>
+    <UnitTest name="TC17_DonorOpensStaffOutcomeUrl_IsDenied" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c5844a8-742b-8639-899d-24bb3ae633e1">
+      <Execution id="4d7369da-7677-4fd9-916b-c23c4fb9c7a9" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="TC17_DonorOpensStaffOutcomeUrl_IsDenied" />
+    </UnitTest>
+    <UnitTest name="TC07a_CheckAge_FirstTimeDonor_Age71_IsTooOld" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="185dd44b-4037-8f3c-b7ab-d868dd720ff2">
+      <Execution id="793c7609-d9a0-4b2e-8240-1d5224d1a8a6" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="TC07a_CheckAge_FirstTimeDonor_Age71_IsTooOld" />
+    </UnitTest>
+    <UnitTest name="IsWeightEligible_49_9Kg_ReturnsFalse" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17dbd6fa-f891-8b65-86a2-0a1d39e6ea4f">
+      <Execution id="c509b4f1-367b-4298-b5fe-8bbbba0cbea8" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsWeightEligible_49_9Kg_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="DonorWhoDonatedExactlyTwoYearsAgo_Aged72_CanBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="16b5d245-8c45-8458-8a2d-b7a4f71c634f">
+      <Execution id="dbe79dde-8f22-424c-a060-657c24f2a5ef" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="DonorWhoDonatedExactlyTwoYearsAgo_Aged72_CanBook" />
+    </UnitTest>
+    <UnitTest name="IsStandDownCleared_OneDayBeforeStandDownEnds_ReturnsFalse" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="111ee9c3-a245-8b98-822a-2b52f33bcf0f">
+      <Execution id="45f6b9d9-e44d-49e3-a3fb-dbb4b040465f" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsStandDownCleared_OneDayBeforeStandDownEnds_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="BookingEligibility_SmokeTest_RejectsShortDonationInterval" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11874f4e-1d64-8fd4-ad6b-bc451c8be444">
+      <TestCategory>
+        <TestCategoryItem TestCategory="PerformanceSmoke" />
+        <TestCategoryItem TestCategory="Performance" />
+      </TestCategory>
+      <Execution id="c468f57f-c14a-4ce9-a82a-c11ef17dc3b8" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Performance.EligibilityLoadTests" name="BookingEligibility_SmokeTest_RejectsShortDonationInterval" />
+    </UnitTest>
+    <UnitTest name="CheckAge_FirstTimeDonor_Age17_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="151b168f-ad54-8bea-ac0b-ef57aeb4cf3b">
+      <Execution id="78b61118-c222-4573-af9b-77aa71c31524" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_FirstTimeDonor_Age17_IsEligible" />
+    </UnitTest>
+    <UnitTest name="DonorWithLastDonationBeforeMinimumInterval_CannotBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1f65026c-bbb3-8d33-868a-6bd64271af9f">
+      <Execution id="00227ead-16ee-432d-adac-e703a9e5c85f" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingEligibilityTests" name="DonorWithLastDonationBeforeMinimumInterval_CannotBook" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Coordinator&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1911bc24-b323-8421-b935-0d8eaeb89f20">
+      <Execution id="b6b13e40-34d5-4519-8502-8931987af787" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="IsIntervalEligible_84DaysInterval_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11c1ea64-653d-8d10-a4af-6926df031c46">
+      <Execution id="25854f16-729d-4902-913c-49ce4682c917" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsIntervalEligible_84DaysInterval_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="CheckAge_LapsedDonor_Age71_NeedsAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="16101a3f-31c6-8185-aa1d-e0361f873584">
+      <Execution id="f2ad956c-e6de-4eae-9d4b-277be4a146c0" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_LapsedDonor_Age71_NeedsAuthorisation" />
+    </UnitTest>
+    <UnitTest name="ExistingDonorDayBefore81stBirthday_IsToldToGetAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="19a3bcc3-9af6-8712-866c-b55376d06679">
+      <Execution id="f2b73661-956d-4b7d-9958-68dab5bf790a" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="ExistingDonorDayBefore81stBirthday_IsToldToGetAuthorisation" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Donor/Dashboard&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c62e5ae-0569-8e0a-b4bf-69fe6d82778d">
+      <Execution id="cd10f8ff-f8e4-4b45-a5e3-4183b42345ad" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Coordinator/Dashboard&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11855a68-d3c1-8fa4-8d8a-4360791163b6">
+      <Execution id="d26b9627-7986-43a3-bd6d-1a5dd473aff1" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="TC18_StaffRecordOutcome_LoadsClientValidation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1cefeb9c-5958-828c-b66a-f96acffb66e4">
+      <Execution id="9fd6e6d2-0d74-4059-9a00-7d7aa615bb49" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.ClientValidationTests" name="TC18_StaffRecordOutcome_LoadsClientValidation" />
+    </UnitTest>
+    <UnitTest name="IsWeightEligible_51Kg_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1aa9c375-e93f-8c99-8a2b-1ef3fe3f906e">
+      <Execution id="b131d8fb-8f6b-484b-b904-e304930ea5d9" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsWeightEligible_51Kg_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Donor/Dashboard&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11abc900-6295-89dc-8d4f-4e129053c41c">
+      <Execution id="4bf17be9-9d59-48a8-9d75-295cb3b9f3fa" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="TC18_StaffSessions_LoadsClientValidation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="128d3fdc-ff2e-84f5-aa5e-719e36ecda59">
+      <Execution id="d254c0d0-185b-4b1b-b2e5-f04f04320dd6" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.ClientValidationTests" name="TC18_StaffSessions_LoadsClientValidation" />
+    </UnitTest>
+    <UnitTest name="AnonymousOpensStaffOutcomeUrl_RedirectsToLogin" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1dfe8ba5-0f98-89cb-a58c-4854f25b5567">
+      <Execution id="7308cbc1-bcb2-4c6d-b094-d0c49221f4c0" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="AnonymousOpensStaffOutcomeUrl_RedirectsToLogin" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Staff/Sessions&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="19228cb6-a4b9-8c2b-be4f-99473a6ce70d">
+      <Execution id="31e7084c-6ea8-4d36-a8b3-8d25a74f0b66" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="CountOn_CountsMultipleSessionsOnSameDate" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1a558d16-49c4-80c9-9c45-ca420fe3cf4b">
+      <Execution id="ef83e5f2-8d80-4bfe-9507-9880399012d0" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.SessionStatTests" name="CountOn_CountsMultipleSessionsOnSameDate" />
+    </UnitTest>
+    <UnitTest name="DonorCancelsOwnBooking_IsAllowed" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c5412e6-1b2d-8ef7-bc4b-520c0c019ee4">
+      <Execution id="15c57027-10b5-4f9c-a097-d2e501b35286" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingOwnershipTests" name="DonorCancelsOwnBooking_IsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_DayBefore75thBirthday_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="12f19ea9-2a11-83b4-bb8f-d23674a2e98b">
+      <Execution id="92257a85-3500-4314-ae9c-c5844ebc7bbf" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_DayBefore75thBirthday_IsEligible" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Staff/Dashboard&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e43bbf5-f2f5-82e9-8770-b3f2d2d6060a">
+      <Execution id="5d6a1aff-ce07-42ed-bbf5-06698998c08b" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_FirstTimeDonor_Age72_IsTooOld" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1ad06db9-ed4f-8359-aa53-cc4ba9c8654b">
+      <Execution id="99fba7f3-fec5-43b8-bfc6-a342b6898d4b" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_FirstTimeDonor_Age72_IsTooOld" />
+    </UnitTest>
+    <UnitTest name="EarliestDonationDate_Is84DaysAfterLastDonation_AndIsTheFirstEligibleDay" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="155d897d-271e-84b2-ae7a-5374a72a63fa">
+      <Execution id="0049a8c5-77fd-41a6-ad8a-f3c77b465720" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="EarliestDonationDate_Is84DaysAfterLastDonation_AndIsTheFirstEligibleDay" />
+    </UnitTest>
+    <UnitTest name="CheckAge_FirstTimeDonor_Age15_IsTooYoung" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1ef7999f-8268-8088-b85b-775c59c19132">
+      <Execution id="0873d885-9bac-4da5-b067-867df7fec723" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_FirstTimeDonor_Age15_IsTooYoung" />
+    </UnitTest>
+    <UnitTest name="CountOn_OnlyCountsSessionsOnRequestedDate" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11c1ba9f-93e3-837d-aa68-b84ee2e83c13">
+      <Execution id="1d9b361d-e6b4-43b1-ab41-3e145a0a3895" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.SessionStatTests" name="CountOn_OnlyCountsSessionsOnRequestedDate" />
+    </UnitTest>
+    <UnitTest name="IsWeightEligible_50Kg_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1fb246b6-2bf9-83f6-95ae-2eb5dfa2d8f6">
+      <Execution id="85fb595b-3e67-4706-8c0b-97dcd2ecac5f" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsWeightEligible_50Kg_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="DeferredWithReason_IsSaved" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11279c74-f98d-89eb-aee2-72b0a733db3d">
+      <Execution id="d77e667e-af80-412e-8941-ee7b6dca0708" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.StaffOutcomeTests" name="DeferredWithReason_IsSaved" />
+    </UnitTest>
+    <UnitTest name="LapsedDonorDayBefore71stBirthday_CanBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1d30f5f1-aef3-8956-98ed-5fba7784cd89">
+      <Execution id="27ff80cd-e19f-4827-ac9d-deff569a4a1b" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="LapsedDonorDayBefore71stBirthday_CanBook" />
+    </UnitTest>
+    <UnitTest name="ExistingDonorOn81stBirthday_IsRefused" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="186c407a-0c4c-887b-a7c4-f63c0a2d6424">
+      <Execution id="08bbdc16-f86e-4e4f-a8cb-ea4fbb50767f" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="ExistingDonorOn81stBirthday_IsRefused" />
+    </UnitTest>
+    <UnitTest name="CheckAge_FirstTimeDonor_DayBefore71stBirthday_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1fa181aa-69c4-8fc3-8a99-ed2f01239eb6">
+      <Execution id="5862180e-f1b3-4b51-9765-8ffb57f23381" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_FirstTimeDonor_DayBefore71stBirthday_IsEligible" />
+    </UnitTest>
+    <UnitTest name="DonorBooking_AppearsOnStaffBookingsPage_WithOutcomeForm" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e7154fd-b8c5-8ebf-a5ba-56487be741f6">
+      <Execution id="5d1dd5e1-10b9-4332-bb05-0fdb329b89d7" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.StaffBookingsPageTests" name="DonorBooking_AppearsOnStaffBookingsPage_WithOutcomeForm" />
+    </UnitTest>
+    <UnitTest name="IsIntervalEligible_83DaysInterval_ReturnsFalse" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="19038838-6a85-87f3-aad1-eb46beb9f010">
+      <Execution id="23c03281-33a2-427d-b058-fbe61deb16fe" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsIntervalEligible_83DaysInterval_ReturnsFalse" />
+    </UnitTest>
+    <UnitTest name="IsIntervalEligible_85DaysInterval_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1734d053-36fa-8c9a-a7d9-6ee92d8b8926">
+      <Execution id="4ba30b74-f8a1-4cd5-8624-4c57ba7b9ee8" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsIntervalEligible_85DaysInterval_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="Calculate_WithNoAppointments_ReturnsZeroMetrics" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c7d9aaa-5a6d-82c8-871d-64bc11abcfb9">
+      <Execution id="0d274c2b-fb08-42fb-ab9b-713e1f8480ff" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.AppointmentAnalyticsServiceTests" name="Calculate_WithNoAppointments_ReturnsZeroMetrics" />
+    </UnitTest>
+    <UnitTest name="Antiforgery_CancelWithoutToken_IsRejected" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c16f1d1-49b4-8100-9ee5-a59bbed37b11">
+      <Execution id="417560be-a331-47ba-81f3-0dbd80cfcebb" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AntiforgeryTests" name="Antiforgery_CancelWithoutToken_IsRejected" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_Age81_IsTooOld" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="170b37c2-11cd-81c1-84f9-55d03722db71">
+      <Execution id="fb9f6805-85e1-4191-8a1d-009e04949a65" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_Age81_IsTooOld" />
+    </UnitTest>
+    <UnitTest name="DonorBelowMinimumWeight_CannotBook" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="111c46a8-8bc6-8fd8-9d1f-6d9ffc812da5">
+      <Execution id="36c97fa3-29dc-456e-a4b6-d68222e47241" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingEligibilityTests" name="DonorBelowMinimumWeight_CannotBook" />
+    </UnitTest>
+    <UnitTest name="BookingEligibility_20ConcurrentDonors_P95WithinTwoSeconds" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="10603adc-50b3-8260-baa9-544f3e97288a">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Performance" />
+      </TestCategory>
+      <Execution id="f463e5c6-f64c-4514-b5df-46c97fa7151c" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Performance.EligibilityLoadTests" name="BookingEligibility_20ConcurrentDonors_P95WithinTwoSeconds" />
+    </UnitTest>
+    <UnitTest name="CountOn_WithNoSessions_ReturnsZero" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="13defbbf-2f71-8539-ad41-82b8ce906a5d">
+      <Execution id="cb122660-eaa8-461b-ac3f-44f3bcd07b4c" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.SessionStatTests" name="CountOn_WithNoSessions_ReturnsZero" />
+    </UnitTest>
+    <UnitTest name="TC07a_FirstTimeDonorOn71stBirthday_IsRefused" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1984ef51-54de-8373-b6fb-d4472f306692">
+      <Execution id="e95517eb-1eb0-4708-b803-d9edd53f38cf" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="TC07a_FirstTimeDonorOn71stBirthday_IsRefused" />
+    </UnitTest>
+    <UnitTest name="LapsedDonorOn71stBirthday_IsToldToGetAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="16200568-50f1-8f4b-9c13-55feb89a63ae">
+      <Execution id="1e7ac2bc-6e56-4bb3-9a84-57c552c2ce74" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AgeRuleBookingTests" name="LapsedDonorOn71stBirthday_IsToldToGetAuthorisation" />
+    </UnitTest>
+    <UnitTest name="Calculate_WithOnlyBookedAndCancelledAppointments_ReturnsZeroDeferralRateAndIncludesLeadTimes" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="11b12146-23b3-81bc-bf8f-1dba3dda3f1d">
+      <Execution id="eef0b5b0-7859-41c8-a281-a4e9d57619ec" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.AppointmentAnalyticsServiceTests" name="Calculate_WithOnlyBookedAndCancelledAppointments_ReturnsZeroDeferralRateAndIncludesLeadTimes" />
+    </UnitTest>
+    <UnitTest name="MinimumAgeDate_Is16thBirthday_AndIsTheFirstEligibleDay" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e22a03a-f460-8567-ba17-736e56c186a6">
+      <Execution id="677ce783-4eae-4daa-b6ca-f3c000aae705" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="MinimumAgeDate_Is16thBirthday_AndIsTheFirstEligibleDay" />
+    </UnitTest>
+    <UnitTest name="TC18_Register_LoadsClientValidation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="15440eda-ed9f-87cc-9d03-f9d3290d025a">
+      <Execution id="5a8e59c9-9f60-435a-9b70-3b21e1c8c25d" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.ClientValidationTests" name="TC18_Register_LoadsClientValidation" />
+    </UnitTest>
+    <UnitTest name="StandDownEndDate_IsEventDatePlusDuration_AndIsTheFirstEligibleDay" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="10fa17c4-ac46-8ecf-9c1e-ff0c2cb1839c">
+      <Execution id="54a57786-45e0-44f2-8030-48ccc85a28c7" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="StandDownEndDate_IsEventDatePlusDuration_AndIsTheFirstEligibleDay" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Donor&quot;,&quot;/Donor/Booking/Book&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="137783a2-fedc-8832-905d-c742fb9f0383">
+      <Execution id="cd562606-8c15-4cb9-a7b5-9770f5ca9b8c" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_Age16_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1b0d271f-0288-86b8-b0b1-fe3012d58c09">
+      <Execution id="be67ddd6-37c4-4330-886b-2101cc908d16" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_Age16_IsEligible" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Coordinator/Dashboard&quot;,True)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="162b0f5b-2fb0-81a0-845e-b76fd0eb0fb2">
+      <Execution id="dbfcda08-6fcd-40e4-813e-3902332d6c3d" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="IsStandDownCleared_OneDayAfterStandDownEnds_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1abe0abc-4b91-8c30-8fa5-d774feec6250">
+      <Execution id="7d926376-7301-4749-9ba0-1e59613852db" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsStandDownCleared_OneDayAfterStandDownEnds_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="TC11_DeferredWithoutReason_IsRejected" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1215277a-a77f-883d-afd3-fc41734689dd">
+      <Execution id="63c9c595-cbc7-4737-8657-48e751bd94a9" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.StaffOutcomeTests" name="TC11_DeferredWithoutReason_IsRejected" />
+    </UnitTest>
+    <UnitTest name="CheckAge_Age72_DonatedTwoYearsAndOneDayAgo_NeedsAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1db7bc52-05ab-8ce2-bb32-ef7fc40df544">
+      <Execution id="73aac6b9-badd-445d-a311-c18bdc820bad" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_Age72_DonatedTwoYearsAndOneDayAgo_NeedsAuthorisation" />
+    </UnitTest>
+    <UnitTest name="IsStandDownCleared_OnStandDownEndDate_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c2301bc-e95e-8d98-a600-441ff6acac8b">
+      <Execution id="491e21f7-9804-4404-9f4a-19fa45f147e1" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsStandDownCleared_OnStandDownEndDate_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="StaffOpensStaffOutcomeUrl_IsAllowed" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="16a53037-0743-8825-9570-e551514f54a2">
+      <Execution id="bbd0adaf-a52f-4583-aa7d-58e0e4099773" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="StaffOpensStaffOutcomeUrl_IsAllowed" />
+    </UnitTest>
+    <UnitTest name="IsWeightEligible_50_1Kg_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="18e06e2c-cf58-8eee-80f4-1416c40b1748">
+      <Execution id="0d289165-df7c-4bd5-9392-cc8d780a267a" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="IsWeightEligible_50_1Kg_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="TC08_StandDownEnteredEarlier_StillBlocksBookingWithoutIt" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1d772d01-3803-881a-af01-b088e11fc61b">
+      <Execution id="db5cf7ce-779b-48de-83bc-8e9f57a22130" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.StandDownRecordTests" name="TC08_StandDownEnteredEarlier_StillBlocksBookingWithoutIt" />
+    </UnitTest>
+    <UnitTest name="TC09_IsIntervalEligible_NoPreviousDonation_ReturnsTrue" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17beb6c9-8ca4-82d4-9763-41f10609c246">
+      <Execution id="0a2c8aa8-f8eb-4647-bf91-fd02b7c5f0e8" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="TC09_IsIntervalEligible_NoPreviousDonation_ReturnsTrue" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Coordinator&quot;,&quot;/Staff/Bookings/SetOutcome/1&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="123b1d7e-7d68-89f6-aee1-3d5e2f51d772">
+      <Execution id="636afa62-fceb-4112-b652-f01ef0701239" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="Calculate_AveragesBookingLeadTimeAcrossAllAppointments" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1eda36dc-7066-8d92-90ac-97c48bb1090f">
+      <Execution id="7e6f9fd8-7d50-4613-86ce-2850c3f2c399" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.AppointmentAnalyticsServiceTests" name="Calculate_AveragesBookingLeadTimeAcrossAllAppointments" />
+    </UnitTest>
+    <UnitTest name="CheckAge_LapsedDonor_DayBefore71stBirthday_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="123a90fa-1892-8db3-b0ca-2d30fb6b0c9c">
+      <Execution id="7f22c073-ba0c-4727-ab58-e837984fc6d9" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_LapsedDonor_DayBefore71stBirthday_IsEligible" />
+    </UnitTest>
+    <UnitTest name="RoleOpensArea_OnlyOwnAreaIsAllowed (&quot;Staff&quot;,&quot;/Coordinator/Dashboard&quot;,False)" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1b9508bb-350d-820a-9572-279e704ab0be">
+      <Execution id="b38cb045-e500-43a1-8a2b-ab556ec3f059" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="RoleOpensArea_OnlyOwnAreaIsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_Age15_IsTooYoung" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1c0fb096-744c-891c-bef1-e9f6290fbded">
+      <Execution id="5fe21763-9403-4013-bf71-6fccd3806307" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_Age15_IsTooYoung" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_DayBefore81stBirthday_NeedsAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="15720df8-2b08-81d3-b9e1-7f889573c437">
+      <Execution id="cada847a-ad9b-4a78-8f1b-e05957df11b6" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_DayBefore81stBirthday_NeedsAuthorisation" />
+    </UnitTest>
+    <UnitTest name="DonorDashboard_DoesNotShowAnotherDonorsBooking" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17a0b49b-456b-8dce-bbec-b46f4c7df4c5">
+      <Execution id="3bb5d10a-a806-42a5-9ff8-647900b43880" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.BookingOwnershipTests" name="DonorDashboard_DoesNotShowAnotherDonorsBooking" />
+    </UnitTest>
+    <UnitTest name="AnonymousOpensHomePage_IsAllowed" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1e5ef678-412a-8e19-bbdb-e42f0d74436d">
+      <Execution id="880fce46-3756-4144-9334-8d055f4569d1" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.RoleAccessTests" name="AnonymousOpensHomePage_IsAllowed" />
+    </UnitTest>
+    <UnitTest name="CheckAge_Age72_DonatedExactlyTwoYearsAgo_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="102a03cb-bd11-85b6-b28d-cdab966db581">
+      <Execution id="a9673f5d-c1a6-4ed6-bd18-504161d38ee8" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_Age72_DonatedExactlyTwoYearsAgo_IsEligible" />
+    </UnitTest>
+    <UnitTest name="Antiforgery_CancelWithToken_Works" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="14196e1d-b45e-8ea6-bc82-4d52bf89956c">
+      <Execution id="4dc68872-56ac-4467-829b-fa186a20f2f4" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AntiforgeryTests" name="Antiforgery_CancelWithToken_Works" />
+    </UnitTest>
+    <UnitTest name="TC07b_CheckAge_ExistingDonor_Age75_NeedsAuthorisation" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="17f2cea7-5c7c-87d1-a7e4-8a7d88d32a74">
+      <Execution id="1c3b06aa-fb7a-45ab-8ba1-c022168404d9" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="TC07b_CheckAge_ExistingDonor_Age75_NeedsAuthorisation" />
+    </UnitTest>
+    <UnitTest name="CheckAge_ExistingDonor_Age72_IsEligible" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="13f6b1bf-6efa-809b-b61a-e14dc831e680">
+      <Execution id="894f1cac-b6fe-4003-823e-5af918b77791" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.EligibilityServiceTests" name="CheckAge_ExistingDonor_Age72_IsEligible" />
+    </UnitTest>
+    <UnitTest name="Antiforgery_RecordOutcomeWithoutToken_IsRejected" storage="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/t/wt-freeze/blooddonation.tests/bin/release/net10.0/blooddonation.tests.dll" id="1681a5af-3a53-8844-bcc6-186777d0cd89">
+      <Execution id="7a3f47d4-e2bb-4186-a56b-b13d73c516ec" />
+      <TestMethod codeBase="/private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll" adapterTypeName="executor://mstestadapter/v4" className="BloodDonation.Tests.Integration.AntiforgeryTests" name="Antiforgery_RecordOutcomeWithoutToken_IsRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1a558d16-49c4-80c9-9c45-ca420fe3cf4b" executionId="ef83e5f2-8d80-4bfe-9507-9880399012d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11279c74-f98d-89eb-aee2-72b0a733db3d" executionId="d77e667e-af80-412e-8941-ee7b6dca0708" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="162b0f5b-2fb0-81a0-845e-b76fd0eb0fb2" executionId="dbfcda08-6fcd-40e4-813e-3902332d6c3d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="111c46a8-8bc6-8fd8-9d1f-6d9ffc812da5" executionId="36c97fa3-29dc-456e-a4b6-d68222e47241" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ef7999f-8268-8088-b85b-775c59c19132" executionId="0873d885-9bac-4da5-b067-867df7fec723" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a779c24-0871-806d-8826-694c5f390434" executionId="686f06af-8b55-4f32-b9a4-f8ebbb77ef0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13defbbf-2f71-8539-ad41-82b8ce906a5d" executionId="cb122660-eaa8-461b-ac3f-44f3bcd07b4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="151b168f-ad54-8bea-ac0b-ef57aeb4cf3b" executionId="78b61118-c222-4573-af9b-77aa71c31524" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11874f4e-1d64-8fd4-ad6b-bc451c8be444" executionId="c468f57f-c14a-4ce9-a82a-c11ef17dc3b8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1dfe8ba5-0f98-89cb-a58c-4854f25b5567" executionId="7308cbc1-bcb2-4c6d-b094-d0c49221f4c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18e06e2c-cf58-8eee-80f4-1416c40b1748" executionId="0d289165-df7c-4bd5-9392-cc8d780a267a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ad06db9-ed4f-8359-aa53-cc4ba9c8654b" executionId="99fba7f3-fec5-43b8-bfc6-a342b6898d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c5412e6-1b2d-8ef7-bc4b-520c0c019ee4" executionId="15c57027-10b5-4f9c-a097-d2e501b35286" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11855a68-d3c1-8fa4-8d8a-4360791163b6" executionId="d26b9627-7986-43a3-bd6d-1a5dd473aff1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17e1e4ae-2a5f-8c46-93eb-ea509e498cdd" executionId="6096a237-af63-4007-a734-004e16f99097" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1344fb7e-55df-8a9c-bb25-df032a1b0233" executionId="f8c917aa-c95e-4fd5-bdc3-c32115b20d47" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1aa9c375-e93f-8c99-8a2b-1ef3fe3f906e" executionId="b131d8fb-8f6b-484b-b904-e304930ea5d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="137783a2-fedc-8832-905d-c742fb9f0383" executionId="cd562606-8c15-4cb9-a7b5-9770f5ca9b8c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1258e5b8-b908-86b0-9354-b8994f9103d8" executionId="5381aeea-b681-4105-83ab-f026664a1ae3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="10603adc-50b3-8260-baa9-544f3e97288a" executionId="f463e5c6-f64c-4514-b5df-46c97fa7151c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cae1f66-f116-8f3c-a56b-a1e418b55aed" executionId="0b3da901-8c14-4d90-95d2-993b9e514117" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1eda36dc-7066-8d92-90ac-97c48bb1090f" executionId="7e6f9fd8-7d50-4613-86ce-2850c3f2c399" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12721624-524c-82ca-9381-6e5467a41c5c" executionId="dd649756-212c-458a-8924-f0b3dd404702" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c5844a8-742b-8639-899d-24bb3ae633e1" executionId="4d7369da-7677-4fd9-916b-c23c4fb9c7a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="10fa17c4-ac46-8ecf-9c1e-ff0c2cb1839c" executionId="54a57786-45e0-44f2-8030-48ccc85a28c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a4a2cc1-e578-8967-aaf8-6ced4183de11" executionId="53eb2cee-68b7-4b1b-ba14-5b551177ee28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1681a5af-3a53-8844-bcc6-186777d0cd89" executionId="7a3f47d4-e2bb-4186-a56b-b13d73c516ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="155d897d-271e-84b2-ae7a-5374a72a63fa" executionId="0049a8c5-77fd-41a6-ad8a-f3c77b465720" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19038838-6a85-87f3-aad1-eb46beb9f010" executionId="23c03281-33a2-427d-b058-fbe61deb16fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ae54c4d-c72a-8f97-9433-a0bbc16bbce4" executionId="149034b9-329e-437d-9442-ee61edcec3a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e5ef678-412a-8e19-bbdb-e42f0d74436d" executionId="880fce46-3756-4144-9334-8d055f4569d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1aef03e3-6f91-89db-b22f-73a12b619dbc" executionId="7026d90b-e962-49fe-aecc-5361ed96d85b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c62e5ae-0569-8e0a-b4bf-69fe6d82778d" executionId="cd10f8ff-f8e4-4b45-a5e3-4183b42345ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="111ee9c3-a245-8b98-822a-2b52f33bcf0f" executionId="45f6b9d9-e44d-49e3-a3fb-dbb4b040465f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19a3bcc3-9af6-8712-866c-b55376d06679" executionId="f2b73661-956d-4b7d-9958-68dab5bf790a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f65026c-bbb3-8d33-868a-6bd64271af9f" executionId="00227ead-16ee-432d-adac-e703a9e5c85f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c16f1d1-49b4-8100-9ee5-a59bbed37b11" executionId="417560be-a331-47ba-81f3-0dbd80cfcebb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16c167ed-92cf-89f2-9bdc-02cdc171d53f" executionId="637239ef-c252-4e47-8c49-72bf1554b0f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="170b37c2-11cd-81c1-84f9-55d03722db71" executionId="fb9f6805-85e1-4191-8a1d-009e04949a65" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1abe0abc-4b91-8c30-8fa5-d774feec6250" executionId="7d926376-7301-4749-9ba0-1e59613852db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17f2cea7-5c7c-87d1-a7e4-8a7d88d32a74" executionId="1c3b06aa-fb7a-45ab-8ba1-c022168404d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e1d4456-fb87-82eb-af8d-0b6d9b80fbeb" executionId="de270fb5-c7d5-4d7d-82a0-168cc8d692fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b9508bb-350d-820a-9572-279e704ab0be" executionId="b38cb045-e500-43a1-8a2b-ab556ec3f059" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cefeb9c-5958-828c-b66a-f96acffb66e4" executionId="9fd6e6d2-0d74-4059-9a00-7d7aa615bb49" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1cca190a-4c8c-84cd-aaff-7d08644233df" executionId="22b1ef04-131c-4331-92a2-7fe15707993a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1286bfc3-067b-8f41-8648-20f548a37753" executionId="cb48f522-4039-49b4-ae5d-f27d879f9ed5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e7154fd-b8c5-8ebf-a5ba-56487be741f6" executionId="5d1dd5e1-10b9-4332-bb05-0fdb329b89d7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e43bbf5-f2f5-82e9-8770-b3f2d2d6060a" executionId="5d6a1aff-ce07-42ed-bbf5-06698998c08b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d1aabbe-3515-89f7-a73c-d3bf9c83bc3c" executionId="fe1186ec-904d-4914-b31f-c9d3bf1b24a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e22a03a-f460-8567-ba17-736e56c186a6" executionId="677ce783-4eae-4daa-b6ca-f3c000aae705" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1911bc24-b323-8421-b935-0d8eaeb89f20" executionId="b6b13e40-34d5-4519-8502-8931987af787" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="110193a2-3c89-8eea-a912-6071693e57e4" executionId="16335759-a423-494e-ad63-35e94a62956a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e4ada3c-10e5-83fc-9e03-36cbcf1da8bc" executionId="43e67710-c1be-42c0-88f2-7aadbbd04ea5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ca98054-21e3-859f-8b88-fa8a420486ec" executionId="3bbd78f3-d2a7-4ee8-817b-acd403f8f199" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16101a3f-31c6-8185-aa1d-e0361f873584" executionId="f2ad956c-e6de-4eae-9d4b-277be4a146c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f53cdc8-37b8-8385-ac74-1804f83fa44c" executionId="86286e1c-a2f0-4809-a136-a9442edc5753" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="186c407a-0c4c-887b-a7c4-f63c0a2d6424" executionId="08bbdc16-f86e-4e4f-a8cb-ea4fbb50767f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11c1ea64-653d-8d10-a4af-6926df031c46" executionId="25854f16-729d-4902-913c-49ce4682c917" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11b12146-23b3-81bc-bf8f-1dba3dda3f1d" executionId="eef0b5b0-7859-41c8-a281-a4e9d57619ec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15440eda-ed9f-87cc-9d03-f9d3290d025a" executionId="5a8e59c9-9f60-435a-9b70-3b21e1c8c25d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1298483d-d580-8e75-8a40-55c77bf2367b" executionId="a3ef1144-7151-4ed5-8f16-446bc0e1c420" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11c1ba9f-93e3-837d-aa68-b84ee2e83c13" executionId="1d9b361d-e6b4-43b1-ab41-3e145a0a3895" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16a53037-0743-8825-9570-e551514f54a2" executionId="bbd0adaf-a52f-4583-aa7d-58e0e4099773" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="114c4724-969d-8eba-8eb9-eeca9ed0bf23" executionId="8b091d35-80bb-43a2-9ce4-cf3707c0cc59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="102a03cb-bd11-85b6-b28d-cdab966db581" executionId="a9673f5d-c1a6-4ed6-bd18-504161d38ee8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1215277a-a77f-883d-afd3-fc41734689dd" executionId="63c9c595-cbc7-4737-8657-48e751bd94a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d30f5f1-aef3-8956-98ed-5fba7784cd89" executionId="27ff80cd-e19f-4827-ac9d-deff569a4a1b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c2301bc-e95e-8d98-a600-441ff6acac8b" executionId="491e21f7-9804-4404-9f4a-19fa45f147e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="185dd44b-4037-8f3c-b7ab-d868dd720ff2" executionId="793c7609-d9a0-4b2e-8240-1d5224d1a8a6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1acbf6fa-13fc-8951-8079-bc41413d1e21" executionId="6513c6ab-e1f9-4fea-b75a-ab23688ddbed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16200568-50f1-8f4b-9c13-55feb89a63ae" executionId="1e7ac2bc-6e56-4bb3-9a84-57c552c2ce74" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="123b1d7e-7d68-89f6-aee1-3d5e2f51d772" executionId="636afa62-fceb-4112-b652-f01ef0701239" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11abc900-6295-89dc-8d4f-4e129053c41c" executionId="4bf17be9-9d59-48a8-9d75-295cb3b9f3fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17a0b49b-456b-8dce-bbec-b46f4c7df4c5" executionId="3bb5d10a-a806-42a5-9ff8-647900b43880" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17dbd6fa-f891-8b65-86a2-0a1d39e6ea4f" executionId="c509b4f1-367b-4298-b5fe-8bbbba0cbea8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13f6b1bf-6efa-809b-b61a-e14dc831e680" executionId="894f1cac-b6fe-4003-823e-5af918b77791" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1db7bc52-05ab-8ce2-bb32-ef7fc40df544" executionId="73aac6b9-badd-445d-a311-c18bdc820bad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17beb6c9-8ca4-82d4-9763-41f10609c246" executionId="0a2c8aa8-f8eb-4647-bf91-fd02b7c5f0e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1734d053-36fa-8c9a-a7d9-6ee92d8b8926" executionId="4ba30b74-f8a1-4cd5-8624-4c57ba7b9ee8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1984ef51-54de-8373-b6fb-d4472f306692" executionId="e95517eb-1eb0-4708-b803-d9edd53f38cf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16b5d245-8c45-8458-8a2d-b7a4f71c634f" executionId="dbe79dde-8f22-424c-a060-657c24f2a5ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="17419ae9-37c2-8796-88bb-1d8949611c3e" executionId="61a4cae7-7da1-4b45-af98-56191160bdc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12f19ea9-2a11-83b4-bb8f-d23674a2e98b" executionId="92257a85-3500-4314-ae9c-c5844ebc7bbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15720df8-2b08-81d3-b9e1-7f889573c437" executionId="cada847a-ad9b-4a78-8f1b-e05957df11b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fb246b6-2bf9-83f6-95ae-2eb5dfa2d8f6" executionId="85fb595b-3e67-4706-8c0b-97dcd2ecac5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c7d9aaa-5a6d-82c8-871d-64bc11abcfb9" executionId="0d274c2b-fb08-42fb-ab9b-713e1f8480ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1fa181aa-69c4-8fc3-8a99-ed2f01239eb6" executionId="5862180e-f1b3-4b51-9765-8ffb57f23381" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="123a90fa-1892-8db3-b0ca-2d30fb6b0c9c" executionId="7f22c073-ba0c-4727-ab58-e837984fc6d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c645249-f4f8-804e-8e03-2d793550663d" executionId="559f7cce-7ad7-474c-bcfe-2042f1cfa641" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c0fb096-744c-891c-bef1-e9f6290fbded" executionId="5fe21763-9403-4013-bf71-6fccd3806307" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19228cb6-a4b9-8c2b-be4f-99473a6ce70d" executionId="31e7084c-6ea8-4d36-a8b3-8d25a74f0b66" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="128d3fdc-ff2e-84f5-aa5e-719e36ecda59" executionId="d254c0d0-185b-4b1b-b2e5-f04f04320dd6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d772d01-3803-881a-af01-b088e11fc61b" executionId="db5cf7ce-779b-48de-83bc-8e9f57a22130" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="14196e1d-b45e-8ea6-bc82-4d52bf89956c" executionId="4dc68872-56ac-4467-829b-fa186a20f2f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b0d271f-0288-86b8-b0b1-fe3012d58c09" executionId="be67ddd6-37c4-4330-886b-2101cc908d16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="95" executed="95" passed="95" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>Test Parallelization enabled for /private/var/folders/40/czn1v4w544bcmklp08l79j8c0000gp/T/wt-freeze/BloodDonation.Tests/bin/Release/net10.0/BloodDonation.Tests.dll (Workers: 10, Scope: MethodLevel)
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="Shreyass-Mac-mini" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="Shreyass-Mac-mini/coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>
