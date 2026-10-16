@@ -20,7 +20,7 @@ Items marked **Now** show a state that will change. Capture them before the next
 | [ ] | Any time | Settings → Branches → protection rule for `main` | Task 5 | `evidence/ci/branch-protection.png` |
 | [ ] | Any time | Actions tab, run history | Task 5 | `evidence/ci/actions-history.png` |
 | [ ] | Any time | Run `38378148778` (red) and `38378373592` (green), test step expanded | Task 3, Task 5 | `evidence/ci/age-rule-red.png`, `age-rule-green.png` |
-| [~] | 16 Oct | Open issues (7) with `status:deferred` and `status:in-progress`. **Still needed:** the closed issues (9) with `status:verified`, using the same filter as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup-open.png`; closed tab still to take |
+| [x] | 16 Oct | Defect register after clean-up: open (7, `status:deferred` or `status:in-progress`) and closed (9, all `status:verified`). Every issue is a defect, so the two tabs cover the same 16 as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup-open.png`, `register-after-cleanup-closed.png` |
 | [x] | 16 Oct | NZBS Eligibility Criteria page, Age section. Matches PR #26 (comment on #25). The address bar and date are not in the shot; retake with them if time allows | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
 | [ ] | On the freeze commit | `dotnet test` output, TRX file, coverage report | Task 3, Task 4 | `evidence/tests/` |
