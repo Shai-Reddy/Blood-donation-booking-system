@@ -16,12 +16,12 @@ Items marked **Now** show a state that will change. Capture them before the next
 |---|---|---|---|---|
 | [x] | 13 Oct | Pull request list: #24 and #26 showing "Review required" with checks 2/2 passed | Task 5 | `evidence/ci/pr-review-required.png` |
 | [x] | 13 Oct | Issues list filtered by `type:defect` (all 16), status labels before clean-up | Task 6 (before clean-up) | `evidence/defects/register-before-cleanup.png` |
-| [ ] | **Now**, before C04 fixes land | PR #32 page showing failing checks (red after the #1 fix, 10 tests) | Task 5 | `evidence/ci/red-check-pr32.png` |
+| [x] | 16 Oct | Pull request list row for #32: "Review required", checks 0/2 failed (after the #1 fix, 10 tests) | Task 5 | `evidence/ci/red-check-pr32.png` |
 | [ ] | Any time | Settings → Branches → protection rule for `main` | Task 5 | `evidence/ci/branch-protection.png` |
 | [ ] | Any time | Actions tab, run history | Task 5 | `evidence/ci/actions-history.png` |
 | [ ] | Any time | Run `38378148778` (red) and `38378373592` (green), test step expanded | Task 3, Task 5 | `evidence/ci/age-rule-red.png`, `age-rule-green.png` |
-| [ ] | **Now** (clean-up done 13 Oct; still not taken on 16 Oct) | Issues list filtered by `type:defect`, same view as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup.png` |
-| [ ] | Any time | NZBS age criteria page in a browser, date visible (nobody has read the source directly yet; C09 could not reach it) | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
+| [~] | 16 Oct | Open issues (7) with `status:deferred` and `status:in-progress`. **Still needed:** the closed issues (9) with `status:verified`, using the same filter as the before shot | Task 6 (after clean-up) | `evidence/defects/register-after-cleanup-open.png`; closed tab still to take |
+| [x] | 16 Oct | NZBS Eligibility Criteria page, Age section. Matches PR #26 (comment on #25). The address bar and date are not in the shot; retake with them if time allows | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
 | [ ] | On the freeze commit | `dotnet test` output, TRX file, coverage report | Task 3, Task 4 | `evidence/tests/` |
 | [ ] | On the freeze commit | App: each role's main screens, a rejection message, the coordinator dashboard | Task 1 | `evidence/app/` |
@@ -52,7 +52,7 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 - The test ages are literals from the NZBS criteria, not `EligibilityRules` constants, so a wrong constant fails them.
 - Fix commit `0a394f4`: `EligibilityService.CheckAge` returning `Eligible`, `TooYoung`, `TooOld` or `NeedsAuthorisation`; new constants in `EligibilityRules`; per-outcome messages in the donor booking controller; age unit tests rewritten for every boundary.
 - Decision recorded in PR #26: first-time donors are accepted until their 71st birthday, following the Transfusion Medicine Handbook 2.2. The registration form already used this limit.
-- Source note: the NZBS pages block non-browser requests, so the rules were taken from nzblood.co.nz search results and CRITERIA.md. **Open the page in a browser and screenshot it before citing it.**
+- Source: first implemented from nzblood.co.nz search results and CRITERIA.md, because the NZBS pages block non-browser requests. Checked against the NZBS Eligibility Criteria page in a browser on 16 Oct: it matches (comment on #25, `evidence/sources/nzbs-age-criteria.png`).
 
 ### #1 and #4 details (14–16 Oct)
 - Test-first for #1: Natalie's C02 commit `414770c`, 5 integration tests in `BookingEligibilityTests` posting to `/Donor/Book`. CI run `38495890975`: 75 total, 67 passed, 8 failed. 4 failures were the new tests, as intended. The other 4 were existing tests (`DonorCancelsOwnBooking_IsAllowed`, `DonorDashboard_DoesNotShowAnotherDonorsBooking`, `TC11_DeferredWithoutReason_IsRejected`, `DeferredWithReason_IsSaved`): the new tests booked into session S3 in the shared static store and used up its places. A test-isolation problem linked to #17.
