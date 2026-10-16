@@ -1,6 +1,7 @@
 using BloodDonation.Domain;
 using BloodDonation.Web.Data;
 using BloodDonation.Web.Identity;
+using BloodDonation.Web.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +30,9 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddSingleton<SampleDataStore>();
+builder.Services.AddSingleton<StandDownRegister>();
 builder.Services.AddScoped<EligibilityService>();
+builder.Services.AddScoped<BookingEligibilityCheck>();
 builder.Services.AddScoped<AppointmentAnalyticsService>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>

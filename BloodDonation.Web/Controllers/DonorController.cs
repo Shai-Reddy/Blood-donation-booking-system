@@ -4,12 +4,20 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using BloodDonation.Web.Data;
 using BloodDonation.Web.Models;
+using BloodDonation.Web.Services;
 
 namespace BloodDonation.Web.Controllers
 {
     [Authorize(Roles = Roles.Donor)]
     public class DonorController : Controller
     {
+        private readonly BookingEligibilityCheck _eligibilityCheck;
+
+        public DonorController(BookingEligibilityCheck eligibilityCheck)
+        {
+            _eligibilityCheck = eligibilityCheck;
+        }
+
         private string? CurrentUserId => User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         [HttpGet]
@@ -52,6 +60,27 @@ namespace BloodDonation.Web.Controllers
             if (session == null || session.SpotsLeft <= 0)
             {
                 TempData["Error"] = "That session is no longer available. Please choose another.";
+                return RedirectToAction("Book");
+            }
+
+            // Every eligibility rule, judged on the day the donor would donate (#1, #4).
+            var standDownEvent = BookingEligibilityCheck.StandDownFromForm(
+                model.HasStandDownEvent, model.StandDownReason, model.StandDownEventDate, model.StandDownDurationDays);
+
+            var ineligible = _eligibilityCheck.Check(
+                CurrentUserId!,
+                model.DateOfBirth!.Value,
+                model.WeightKg!.Value,
+                model.LastDonationDate,
+                standDownEvent,
+                session.SessionDate);
+
+            if (ineligible != null)
+            {
+                TempData["Error"] = ineligible.EarliestEligibleDate.HasValue
+                    ? $"You can't donate on {session.SessionDate:dddd d MMM yyyy}. {ineligible.Message} " +
+                      $"You can book a session from {ineligible.EarliestEligibleDate.Value:d MMM yyyy}."
+                    : $"You can't donate on {session.SessionDate:dddd d MMM yyyy}. {ineligible.Message}";
                 return RedirectToAction("Book");
             }
 
