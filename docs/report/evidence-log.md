@@ -24,7 +24,7 @@ Items marked **Now** show a state that will change. Capture them before the next
 | [x] | 16 Oct | NZBS Eligibility Criteria page, Age section. Matches PR #26 (comment on #25). The address bar and date are not in the shot; retake with them if time allows | Task 2, Task 6, #25 | `evidence/sources/nzbs-age-criteria.png` |
 | [ ] | After clean-up | One issue's timeline showing every lifecycle stage (#3 or #25) | Task 6 | `evidence/defects/lifecycle-example.png` |
 | [x] | 16 Oct, freeze `4e93f8d` | TRX results (95/95) and coverage report | Task 3, Task 4, Task 8 | `evidence/tests/freeze-4e93f8d-test-results.trx.xml`, `cobertura-freeze-4e93f8d.xml` |
-| [ ] | On the freeze commit | App: each role's main screens, a rejection message, the coordinator dashboard | Task 1 | `evidence/app/` |
+| [x] | 16 Oct, freeze build | App: each role's main screens, rejection and authorisation messages, validation, staff and coordinator dashboards (scripted browser) | Task 1, Task 3, slides | `evidence/app/01–18*.png` |
 
 ---
 
@@ -238,3 +238,12 @@ All five categories now have at least one logged example. C04–C06 evidence is 
   - The load test's "provisional" comment and messages corrected.
   - C07 CI-run screenshot captured from the public run page (`evidence/copilot/C07-ci-coverage/ci-run-with-coverage-artefact.png`, run `38504692279`, artefact `test-results-and-coverage`, 39.8 KB).
 - **Still Natalie's:** C01 and C09 chat screenshots (only her chat history has them); her Task 9 and Task 11 reflections.
+- **Scripted browser run** (Puppeteer driving Chrome) against the freeze build (`evidence/app/`, `results.txt`). Session S1 was 21 Oct.
+  - MT1: 83 days refused with "You can book a session from 22 Oct 2026"; 84 days confirmed.
+  - MT3: S4 "Fully booked", option disabled.
+  - MT4: per-field messages on the client, and on the server with JavaScript off.
+  - MT6: O+ stock 14 → 15 after staff recorded Donated.
+  - MT7: aged 75 told to contact NZBS for Medical Officer authorisation.
+  - Access: donor on a staff page sent to Access Denied.
+  - MT5: register → dashboard → booking form → dashboard with confirmation, which is 3 screens before the confirmation. No newcomer took part.
+  - TC11 visual: deferral without a reason refused, but the message appeared on every row → **#43** (low, P3, deferred). The register now has 21 defects.
