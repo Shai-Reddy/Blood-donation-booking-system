@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Net;
 using System.Text.RegularExpressions;
 using BloodDonation.Domain;
+using BloodDonation.Web.Data;
 using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace BloodDonation.Tests.Integration;
@@ -35,7 +36,8 @@ public class BookingEligibilityTests
 
         await PostBookingAsync(
             client,
-            lastDonationDate: DateTime.Today.AddDays(-(EligibilityRules.MinimumDonationIntervalDays - 1)));
+            lastDonationDate: InMemoryStore.Sessions.Single(session => session.Id == SessionId).SessionDate
+                .AddDays(-(EligibilityRules.MinimumDonationIntervalDays - 1)));
 
         Assert.IsNull(await DashboardBookingIdAsync(client), "An ineligible booking should not appear on the dashboard.");
     }
@@ -47,7 +49,8 @@ public class BookingEligibilityTests
 
         await PostBookingAsync(
             client,
-            lastDonationDate: DateTime.Today.AddDays(-EligibilityRules.MinimumDonationIntervalDays));
+            lastDonationDate: InMemoryStore.Sessions.Single(session => session.Id == SessionId).SessionDate
+                .AddDays(-EligibilityRules.MinimumDonationIntervalDays));
 
         Assert.IsNotNull(await DashboardBookingIdAsync(client), "An eligible booking should appear on the dashboard.");
     }

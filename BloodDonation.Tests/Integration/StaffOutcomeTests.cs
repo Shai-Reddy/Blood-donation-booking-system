@@ -165,7 +165,9 @@ public class StaffOutcomeTests
             ("SessionId", SessionId),
             ("DonorName", "Test Donor"),
             ("DonorEmail", "test.donor@test.local"),
-            ("BloodType", ""));
+            ("BloodType", ""),
+            ("DateOfBirth", "1999-01-02"),
+            ("WeightKg", "70"));
 
         Assert.AreEqual(
             HttpStatusCode.Redirect,
