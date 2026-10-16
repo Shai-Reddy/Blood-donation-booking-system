@@ -38,7 +38,7 @@ public class BookingOwnershipTests
         var (owner, bookingId) = await DonorWithBookingAsync();
         var other = await RegisteredDonorAsync();
 
-        var response = await PostWithTokenAsync(other, "/Donor/Dashboard", "/Donor/Cancel", ("BookingId", bookingId));
+        var response = await IntegrationTestHelpers.PostWithTokenAsync(other, "/Donor/Dashboard", "/Donor/Cancel", ("BookingId", bookingId));
 
         Assert.AreEqual(HttpStatusCode.Redirect, response.StatusCode);
         Assert.AreEqual("/Account/AccessDenied", RedirectPath(response));
@@ -51,7 +51,7 @@ public class BookingOwnershipTests
         var (owner, bookingId) = await DonorWithBookingAsync();
         var other = await RegisteredDonorAsync();
 
-        var response = await PostWithTokenAsync(other, "/Donor/Dashboard", "/Donor/Reschedule", ("BookingId", bookingId));
+        var response = await IntegrationTestHelpers.PostWithTokenAsync(other, "/Donor/Dashboard", "/Donor/Reschedule", ("BookingId", bookingId));
 
         Assert.AreEqual(HttpStatusCode.Redirect, response.StatusCode);
         Assert.AreEqual("/Account/AccessDenied", RedirectPath(response));
@@ -63,7 +63,7 @@ public class BookingOwnershipTests
     {
         var (owner, bookingId) = await DonorWithBookingAsync();
 
-        var response = await PostWithTokenAsync(owner, "/Donor/Dashboard", "/Donor/Cancel", ("BookingId", bookingId));
+        var response = await IntegrationTestHelpers.PostWithTokenAsync(owner, "/Donor/Dashboard", "/Donor/Cancel", ("BookingId", bookingId));
 
         Assert.AreEqual(HttpStatusCode.Redirect, response.StatusCode);
         Assert.AreEqual("/Donor/Dashboard", RedirectPath(response));
@@ -85,7 +85,7 @@ public class BookingOwnershipTests
     {
         var client = await RegisteredDonorAsync();
 
-        var response = await PostWithTokenAsync(client, "/Donor/Book", "/Donor/Book",
+        var response = await IntegrationTestHelpers.PostWithTokenAsync(client, "/Donor/Book", "/Donor/Book",
             ("SessionId", SessionId),
             ("DonorName", "Test Donor"),
             ("DonorEmail", "test.donor@test.local"),
@@ -101,10 +101,10 @@ public class BookingOwnershipTests
 
     private static async Task<HttpClient> RegisteredDonorAsync()
     {
-        var client = _factory.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });
+        var client = IntegrationTestHelpers.CreateClient(_factory);
         var email = $"donor-{Guid.NewGuid():N}@test.local";
 
-        var response = await PostWithTokenAsync(client, "/Account/Register", "/Account/Register",
+        var response = await IntegrationTestHelpers.PostWithTokenAsync(client, "/Account/Register", "/Account/Register",
             ("FullName", "Test Donor"),
             ("Email", email),
             ("Password", Password),
@@ -130,15 +130,4 @@ public class BookingOwnershipTests
         return match.Success ? match.Groups[1].Value : null;
     }
 
-    private static async Task<HttpResponseMessage> PostWithTokenAsync(
-        HttpClient client, string formPageUrl, string postUrl, params (string Key, string Value)[] fields)
-    {
-        var formPage = await client.GetStringAsync(formPageUrl);
-        var token = Regex.Match(formPage, "name=\"__RequestVerificationToken\" type=\"hidden\" value=\"([^\"]+)\"").Groups[1].Value;
-
-        var form = fields.ToDictionary(f => f.Key, f => f.Value);
-        form["__RequestVerificationToken"] = token;
-
-        return await client.PostAsync(postUrl, new FormUrlEncodedContent(form));
-    }
 }
