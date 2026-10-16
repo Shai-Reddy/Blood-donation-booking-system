@@ -56,35 +56,33 @@ public class ClientValidationTests
     [TestMethod]
     public async Task TC18_StaffRecordOutcome_LoadsClientValidation()
     {
+        // A donor books first, so the staff bookings page has a row
+        // with a Record Outcome form on it.
+        var donor = await RegisteredDonorAsync();
+
+        var booking = await PostWithTokenAsync(
+            donor,
+            "/Donor/Book",
+            "/Donor/Book",
+            ("SessionId", "S1"),
+            ("DonorName", "Validation Donor"),
+            ("DonorEmail", "validation.donor@test.local"),
+            ("BloodType", ""),
+            ("DateOfBirth", "1990-01-01"),
+            ("WeightKg", "70"),
+            ("LastDonationDate", ""),
+            ("HasStandDownEvent", "false"));
+
+        Assert.AreEqual(
+            HttpStatusCode.Redirect,
+            booking.StatusCode,
+            "Booking failed.");
+
         // Sign in as a staff user.
         var client = await StaffClientAsync();
 
-        // Load the staff bookings page first so an existing
-        // appointment id can be found.
-        var bookingsResponse = await client.GetAsync("/Staff/Bookings");
-
-        Assert.AreEqual(
-            HttpStatusCode.OK,
-            bookingsResponse.StatusCode);
-
-        var bookingsHtml =
-            await bookingsResponse.Content.ReadAsStringAsync();
-
-        // Get the first appointment id from a SetOutcome link.
-        var match = Regex.Match(
-            bookingsHtml,
-            @"/Staff/Bookings/SetOutcome/(\d+)",
-            RegexOptions.IgnoreCase);
-
-        Assert.IsTrue(
-            match.Success,
-            "No appointment was available for the Record Outcome form.");
-
-        var appointmentId = match.Groups[1].Value;
-
-        // Load the actual Record Outcome form.
-        var response = await client.GetAsync(
-            $"/Staff/Bookings/SetOutcome/{appointmentId}");
+        // Load the bookings page staff use to record outcomes (#35).
+        var response = await client.GetAsync("/Staff/Bookings");
 
         Assert.AreEqual(
             HttpStatusCode.OK,
@@ -93,6 +91,11 @@ public class ClientValidationTests
         // Read the rendered HTML so the validation scripts and
         // validation metadata can be checked.
         var html = await response.Content.ReadAsStringAsync();
+
+        StringAssert.Contains(
+            html,
+            "/Staff/RecordOutcome",
+            "The Record Outcome form was not on the staff bookings page.");
 
         AssertClientValidationLoaded(html);
     }
