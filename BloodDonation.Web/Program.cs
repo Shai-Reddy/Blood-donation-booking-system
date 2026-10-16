@@ -60,14 +60,16 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-    name: "areas",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
-
+// The default route comes first: when a URL matches both a main page and an area page
+// (/Staff/Bookings), the page the navigation bar uses wins (#35).
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
