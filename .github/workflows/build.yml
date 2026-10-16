@@ -23,4 +23,12 @@ jobs:
         run: dotnet build BloodDonation.sln --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test BloodDonation.sln --no-build --configuration Release --verbosity normal
+        run: dotnet test BloodDonation.sln --no-build --configuration Release --verbosity normal --results-directory TestResults --logger "trx;LogFileName=test-results.trx" --collect:"XPlat Code Coverage"
+
+      - name: Upload test results and coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-and-coverage
+          path: TestResults/**
+          if-no-files-found: warn
