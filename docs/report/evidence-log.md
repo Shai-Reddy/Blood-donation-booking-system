@@ -43,6 +43,7 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 | #25 NZBS age rule (corrects #2) | `82c13f9` | `38378148778` | `0a394f4` | `38378373592` | #26 | pending | open |
 | #1 Navbar booking skips eligibility | `414770c` (Natalie, C02) | `38495890975` | `c89f6e8` | red: `38831085782` (see below) | #32 (draft) | pending | open |
 | #4 Stand-downs not remembered | `45de589` | `38830933862` | `c89f6e8` | red: `38831085782` (see below) | #32 (draft) | pending | open |
+| #35 Staff bookings page unreachable | `da656d0` | `38845936932` | `4d76ef3` | `38846031875` | #38 | pending | open |
 
 ### #25 details (13 Oct)
 - Found by checking `EligibilityService.IsAgeEligible` against the NZBS criteria (CRITERIA.md section 3). The #2 fix (`deb8737`) had set the limit to the 81st birthday with no authorisation step, and its tests passed because they used the same wrong limit.
@@ -76,6 +77,7 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 | #31 | `docs/c09-age-rules-evidence` | C09 evidence | – | Shai-Reddy | 16 Oct |
 | #32 | `fix/navbar-booking-eligibility` | #1 and #4 fix (draft until C04) | #1, #4 | pending | open |
 | #33 | `ci/smoke-step` | CI smoke test: start the Release build, require HTTP 200 from the home page within 60 s | – | pending | open |
+| #38 | `fix/staff-bookings-route` | #35: default route registered before the area route; TC18 staff test pointed at the real outcome form | #35 | pending | open |
 
 ---
 
@@ -199,3 +201,15 @@ Status on 16 Oct. Details in `ai-usage-log.md` and `evidence/copilot/`.
 | C10 Copilot as reviewer | QA | Not started (optional) |
 
 Debugging, refactoring and a finished implementation example are still missing. CRITERIA.md set 15 Oct as the deadline for all categories.
+
+### 16 Oct (later): quality testing and new defects
+- **Scope reasons** for Partial and Out-of-scope requirements reconstructed from the mid-project sprint plan and the git and issue timeline (Task 2.1). FR7 was never assigned a sprint: a planning gap.
+- **#34 logged** (FR5 24-hour cutoff not implemented; high, P2, deferred). Sessions store their start time only as display text.
+- **Coverage measured on `main` (`d03f051`)**, Release build, `coverlet.collector`: overall line 71.03% (466/656), branch 75.0% (483/644); Domain line 84.4%, branch 100%; Web line 69.6%, branch 74.3%. File: `evidence/tests/cobertura-main-d03f051.xml`. Domain's uncovered lines are unused model classes (`Session`, `BloodStock`, part of `StandDownEvent`).
+- **Defect close times** (9 closed): mean 43.2 h, median 48.6 h, all within 80 h. #13 is 0 h (logged after being fixed).
+- **Release preview build**, local only (branch `tmp/release-preview`, not pushed): `main` + #26 + #33 + #32. One conflict in `Areas/Donor/BookingController.cs`, resolved by keeping #32's version and porting #26's `CheckAge` into `BookingEligibilityCheck`. 92 tests: 82 passed, 10 failed (the known C04 failures only). Reuse this resolution when #26 merges and #32 is updated.
+- **Security probes** against the preview app on Kestrel (`evidence/quality/security-probes-2026-10-16.txt`): 44/44 direct-URL role checks as expected; open redirect blocked; no anti-forgery token gives 400; cross-donor cancel refused; cookie HttpOnly, SameSite=Lax. **Lockout failed**: signed in after 10 wrong passwords → **#36** (medium, P2, deferred).
+- **#35 found** by exploratory testing of the running app: the staff dashboard's "View All Bookings" link (`/Staff/Bookings`) opened the area prototype page, because the area route was registered first. A donor's booking was invisible to staff. Logged as **P1**, fixed test-first in **PR #38** (red `38845936932`, green `38846031875`). `TC18_StaffRecordOutcome_LoadsClientValidation` had been written against the prototype page and was updated.
+- **NFR2 load test**, out of process (`evidence/quality/load-test-nfr2-2026-10-16.txt`): 20 signed-in donors × 10 rounds, 200 requests, all refused on the 84-day rule as designed. Average 3.3 ms, median 3.1, p95 5.8, max 7.1 ms. Apple M4, same machine.
+- **Lighthouse 12.6.1 accessibility** (`evidence/quality/lighthouse/`): home 92 (step-number contrast 1.8:1 → **#37**, low, P3, deferred), sign in 100, staff sign in 100, register 100.
+- **Report drafts** for Tasks 1–11 written in `docs/report/` (not yet committed).
