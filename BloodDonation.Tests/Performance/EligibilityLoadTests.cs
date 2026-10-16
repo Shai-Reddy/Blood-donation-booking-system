@@ -15,8 +15,10 @@ public class EligibilityLoadTests
 {
     private const int DonorCount = 20;
     private const int RoundCount = 10;
+    // Provisional until the NFR2 response-time requirement is confirmed.
     private const double P95LimitMilliseconds = 2000;
     private const string Password = "Load#Test1";
+    private const string IntervalRejectionMessage = "At least 84 days must pass between donations.";
 
     private static readonly Regex AntiForgeryTokenPattern = new(
         "name=\"__RequestVerificationToken\" type=\"hidden\" value=\"([^\"]+)\"",
@@ -27,71 +29,55 @@ public class EligibilityLoadTests
     [TestMethod]
     public async Task BookingEligibility_20ConcurrentDonors_P95WithinTwoSeconds()
     {
-        using var factory = new WebApplicationFactory<Program>();
-        using var warmupClient = factory.CreateClient(new WebApplicationFactoryClientOptions
-        {
-            AllowAutoRedirect = false
-        });
-
-        _ = factory.Server;
-        using (var warmupResponse = await warmupClient.GetAsync("/Account/Register"))
-        {
-            Assert.AreEqual(HttpStatusCode.OK, warmupResponse.StatusCode, "The test host warm-up failed.");
-        }
-
-        var session = new DonationSession
-        {
-            Id = $"PERF-{Guid.NewGuid():N}",
-            SessionDate = DateTime.Today.AddDays(7),
-            Time = "Performance test",
-            Location = "Test only",
-            Capacity = DonorCount * RoundCount + 1,
-            BookedCount = 0
-        };
-        InMemoryStore.Sessions.Add(session);
-
+        var overallTimer = Stopwatch.StartNew();
+        var session = CreatePerformanceSession(DonorCount * RoundCount + 1);
         var clients = new List<HttpClient>(DonorCount);
         var donors = new List<DonorClient>(DonorCount);
         var allResults = new List<TimedResponse>(DonorCount * RoundCount);
-        var lastDonationDate = DateTime.Today.AddDays(-60).ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
 
         try
         {
+            using var factory = new WebApplicationFactory<Program>();
+            using var warmupClient = factory.CreateClient(new WebApplicationFactoryClientOptions
+            {
+                AllowAutoRedirect = false
+            });
+
+            _ = factory.Server;
+            var warmupTimer = Stopwatch.StartNew();
+            using (var warmupResponse = await warmupClient.GetAsync("/Account/Register"))
+            {
+                Assert.AreEqual(HttpStatusCode.OK, warmupResponse.StatusCode, "The test host warm-up failed.");
+            }
+            warmupTimer.Stop();
+            TestContext.WriteLine($"Host warm-up: {warmupTimer.Elapsed.TotalSeconds:F2} s");
+
+            InMemoryStore.Sessions.Add(session);
+            var registrationTimer = Stopwatch.StartNew();
+
             for (var index = 0; index < DonorCount; index++)
             {
-                var client = factory.CreateClient(new WebApplicationFactoryClientOptions
-                {
-                    AllowAutoRedirect = false
-                });
-                clients.Add(client);
+                var donorTimer = Stopwatch.StartNew();
+                var donor = await RegisterDonorAsync(factory, index + 1);
+                donorTimer.Stop();
 
-                var email = $"eligibility-load-{Guid.NewGuid():N}@test.local";
-                var registration = await PostWithTokenAsync(
-                    client,
-                    "/Account/Register",
-                    "/Account/Register",
-                    ("FullName", $"Load Donor {index + 1}"),
-                    ("Email", email),
-                    ("Password", Password),
-                    ("ConfirmPassword", Password),
-                    ("DateOfBirth", "1990-01-01"),
-                    ("WeightKg", "70"),
-                    ("TravelledOverseas", "No"));
-
-                using (registration)
-                {
-                    Assert.AreEqual(HttpStatusCode.Redirect, registration.StatusCode,
-                        $"Registration failed for test donor {index + 1}.");
-                    Assert.AreEqual("/Donor/Dashboard", RedirectPath(registration),
-                        $"Test donor {index + 1} was not signed in after registration.");
-                }
-
-                donors.Add(new DonorClient(client, email));
+                donors.Add(donor);
+                clients.Add(donor.Client);
+                TestContext.WriteLine($"Registration {index + 1}/{DonorCount}: {donorTimer.Elapsed.TotalSeconds:F2} s");
             }
+
+            registrationTimer.Stop();
+            TestContext.WriteLine($"All registrations: {registrationTimer.Elapsed.TotalSeconds:F2} s");
 
             for (var round = 0; round < RoundCount; round++)
             {
+                var roundTimer = Stopwatch.StartNew();
+                var preparationTimer = Stopwatch.StartNew();
                 var requests = new List<PreparedRequest>(DonorCount);
+                var lastDonationDate = session.SessionDate
+                    .AddDays(-60)
+                    .ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+
                 foreach (var donor in donors)
                 {
                     var form = await donor.Client.GetStringAsync("/Donor/Book");
@@ -101,11 +87,14 @@ public class EligibilityLoadTests
                         ["DonorName"] = "Eligibility Load Donor",
                         ["DonorEmail"] = donor.Email,
                         ["BloodType"] = "",
+                        ["DateOfBirth"] = "1990-01-01",
+                        ["WeightKg"] = "70",
                         ["LastDonationDate"] = lastDonationDate,
                         ["__RequestVerificationToken"] = ExtractAntiForgeryToken(form)
                     };
                     requests.Add(new PreparedRequest(donor, new FormUrlEncodedContent(fields)));
                 }
+                preparationTimer.Stop();
 
                 var releaseGate = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
                 var readySignals = requests
@@ -117,8 +106,25 @@ public class EligibilityLoadTests
                     releaseGate.Task)).ToArray();
 
                 await Task.WhenAll(readySignals.Select(signal => signal.Task));
+                var postTimer = Stopwatch.StartNew();
                 releaseGate.SetResult();
-                allResults.AddRange(await Task.WhenAll(roundTasks));
+                var roundResults = await Task.WhenAll(roundTasks);
+                postTimer.Stop();
+                allResults.AddRange(roundResults);
+
+                var rejectionTimer = Stopwatch.StartNew();
+                for (var index = 0; index < roundResults.Length; index++)
+                {
+                    await AssertEligibilityRejectionAsync(roundResults[index], round * DonorCount + index + 1);
+                }
+                rejectionTimer.Stop();
+                roundTimer.Stop();
+
+                TestContext.WriteLine(
+                    $"Round {round + 1}/{RoundCount}: preparation {preparationTimer.Elapsed.TotalSeconds:F2} s; " +
+                    $"concurrent POSTs {postTimer.Elapsed.TotalSeconds:F2} s; " +
+                    $"rejection checks {rejectionTimer.Elapsed.TotalSeconds:F2} s; " +
+                    $"total {roundTimer.Elapsed.TotalSeconds:F2} s");
             }
 
             var orderedTimes = allResults
@@ -134,34 +140,17 @@ public class EligibilityLoadTests
             TestContext.WriteLine($"Average response time: {average:F2} ms");
             TestContext.WriteLine($"Nearest-rank p95 response time: {p95:F2} ms (rank {p95Rank})");
             TestContext.WriteLine($"Maximum response time: {maximum:F2} ms");
+            TestContext.WriteLine($"Provisional P95 limit (NFR2 confirmation pending): {P95LimitMilliseconds:F0} ms");
 
             Assert.HasCount(DonorCount * RoundCount, allResults,
                 "Not all timed booking requests completed.");
-
-            for (var index = 0; index < allResults.Count; index++)
-            {
-                AssertIsNotAuthenticationOrAntiForgeryFailure(allResults[index], index + 1);
-            }
-
-            Assert.IsLessThanOrEqualTo(p95, P95LimitMilliseconds,
-                $"NFR2 p95 was {p95:F2} ms; limit is {P95LimitMilliseconds:F0} ms.");
 
             var bookingsCreated = InMemoryStore.Bookings.Count(booking => booking.SessionId == session.Id);
             Assert.AreEqual(0, bookingsCreated,
                 $"Expected no bookings for interval-ineligible requests; found {bookingsCreated}.");
 
-            // Pending: /Donor/Book has no verified interval-specific rejection contract yet.
-            // Do not infer rejection from a status code or invent a body/message assertion.
-            // The observed responses are included below to make the missing contract visible.
-            var observedResponses = string.Join(
-                Environment.NewLine,
-                allResults.Select((result, index) =>
-                    $"Request {index + 1}: HTTP {(int)result.StatusCode}; body: {SummarizeBody(result.Body)}"));
-            Assert.Inconclusive(
-                "Pending eligibility fix: /Donor/Book must expose a verifiable, interval-specific " +
-                "rejection before this test can establish that each request failed the 84-day rule. " +
-                "Observed responses (not classified as interval rejections):" + Environment.NewLine +
-                observedResponses);
+            Assert.IsLessThanOrEqualTo(P95LimitMilliseconds,
+                p95, $"Provisional NFR2 p95 was {p95:F2} ms; limit is {P95LimitMilliseconds:F0} ms.");
         }
         finally
         {
@@ -172,6 +161,115 @@ public class EligibilityLoadTests
             {
                 client.Dispose();
             }
+
+            overallTimer.Stop();
+            TestContext.WriteLine($"Overall load-test execution: {overallTimer.Elapsed.TotalSeconds:F2} s");
+        }
+    }
+
+    [TestMethod]
+    [TestCategory("PerformanceSmoke")]
+    public async Task BookingEligibility_SmokeTest_RejectsShortDonationInterval()
+    {
+        var overallTimer = Stopwatch.StartNew();
+        var session = CreatePerformanceSession(capacity: 2);
+        HttpClient? client = null;
+
+        try
+        {
+            using var factory = new WebApplicationFactory<Program>();
+            var donor = await RegisterDonorAsync(factory, 1);
+            client = donor.Client;
+            InMemoryStore.Sessions.Add(session);
+
+            var preparationTimer = Stopwatch.StartNew();
+            var form = await client.GetStringAsync("/Donor/Book");
+            using var requestContent = new FormUrlEncodedContent(new Dictionary<string, string>
+            {
+                ["SessionId"] = session.Id,
+                ["DonorName"] = "Eligibility Smoke Donor",
+                ["DonorEmail"] = donor.Email,
+                ["BloodType"] = "",
+                ["DateOfBirth"] = "1990-01-01",
+                ["WeightKg"] = "70",
+                ["LastDonationDate"] = session.SessionDate
+                    .AddDays(-60)
+                    .ToString("yyyy-MM-dd", CultureInfo.InvariantCulture),
+                ["__RequestVerificationToken"] = ExtractAntiForgeryToken(form)
+            });
+            preparationTimer.Stop();
+            TestContext.WriteLine($"Smoke-test preparation: {preparationTimer.Elapsed.TotalSeconds:F2} s");
+
+            var postTimer = Stopwatch.StartNew();
+            TimedResponse result;
+            using (var response = await client.PostAsync("/Donor/Book", requestContent))
+            {
+                postTimer.Stop();
+                result = new TimedResponse(donor, response.StatusCode, response.Headers.Location, postTimer.Elapsed);
+            }
+
+            await AssertEligibilityRejectionAsync(result, 1);
+
+            var bookingsCreated = InMemoryStore.Bookings.Count(booking => booking.SessionId == session.Id);
+            Assert.AreEqual(0, bookingsCreated,
+                $"Expected no bookings for the interval-ineligible smoke request; found {bookingsCreated}.");
+            TestContext.WriteLine($"Smoke-test booking POST: {postTimer.Elapsed.TotalMilliseconds:F2} ms");
+        }
+        finally
+        {
+            InMemoryStore.Bookings.RemoveAll(booking => booking.SessionId == session.Id);
+            InMemoryStore.Sessions.Remove(session);
+            client?.Dispose();
+            overallTimer.Stop();
+            TestContext.WriteLine($"Overall smoke-test execution: {overallTimer.Elapsed.TotalSeconds:F2} s");
+        }
+    }
+
+    private static DonationSession CreatePerformanceSession(int capacity)
+    {
+        return new DonationSession
+        {
+            Id = $"PERF-{Guid.NewGuid():N}",
+            SessionDate = DateTime.Today.AddDays(7),
+            Time = "Performance test",
+            Location = "Test only",
+            Capacity = capacity,
+            BookedCount = 0
+        };
+    }
+
+    private static async Task<DonorClient> RegisterDonorAsync(WebApplicationFactory<Program> factory, int index)
+    {
+        var client = factory.CreateClient(new WebApplicationFactoryClientOptions
+        {
+            AllowAutoRedirect = false
+        });
+        var email = $"eligibility-load-{Guid.NewGuid():N}@test.local";
+
+        try
+        {
+            using var registration = await PostWithTokenAsync(
+                client,
+                "/Account/Register",
+                "/Account/Register",
+                ("FullName", $"Load Donor {index}"),
+                ("Email", email),
+                ("Password", Password),
+                ("ConfirmPassword", Password),
+                ("DateOfBirth", "1990-01-01"),
+                ("WeightKg", "70"),
+                ("TravelledOverseas", "No"));
+
+            Assert.AreEqual(HttpStatusCode.Redirect, registration.StatusCode,
+                $"Registration failed for test donor {index}.");
+            Assert.AreEqual("/Donor/Dashboard", RedirectPath(registration),
+                $"Test donor {index} was not signed in after registration.");
+            return new DonorClient(client, email);
+        }
+        catch
+        {
+            client.Dispose();
+            throw;
         }
     }
 
@@ -186,10 +284,22 @@ public class EligibilityLoadTests
 
         var stopwatch = Stopwatch.StartNew();
         using var response = await request.Donor.Client.PostAsync("/Donor/Book", content);
-        var body = await response.Content.ReadAsStringAsync();
         stopwatch.Stop();
 
-        return new TimedResponse(response.StatusCode, response.Headers.Location, stopwatch.Elapsed, body);
+        return new TimedResponse(request.Donor, response.StatusCode, response.Headers.Location, stopwatch.Elapsed);
+    }
+
+    private static async Task AssertEligibilityRejectionAsync(TimedResponse result, int requestNumber)
+    {
+        Assert.AreEqual(HttpStatusCode.Redirect, result.StatusCode,
+            $"Request {requestNumber} did not redirect after booking eligibility rejection.");
+        Assert.AreEqual("/Donor/Book", RedirectPath(result.Location),
+            $"Request {requestNumber} did not redirect to the booking form.");
+
+        // Consume and assert each donor's TempData before starting that donor's next round.
+        var bookingForm = await result.Donor.Client.GetStringAsync("/Donor/Book");
+        Assert.Contains(IntervalRejectionMessage, bookingForm,
+            $"Request {requestNumber} did not show the 84-day interval rejection.");
     }
 
     private static async Task<HttpResponseMessage> PostWithTokenAsync(
@@ -212,39 +322,14 @@ public class EligibilityLoadTests
         return match.Groups[1].Value;
     }
 
-    private static void AssertIsNotAuthenticationOrAntiForgeryFailure(TimedResponse result, int requestNumber)
-    {
-        Assert.AreNotEqual(HttpStatusCode.Unauthorized, result.StatusCode,
-            $"Request {requestNumber} was unauthenticated.");
-        Assert.AreNotEqual(HttpStatusCode.Forbidden, result.StatusCode,
-            $"Request {requestNumber} was forbidden.");
-        Assert.AreNotEqual(HttpStatusCode.BadRequest, result.StatusCode,
-            $"Request {requestNumber} returned HTTP 400; treat this as an invalid request or anti-forgery failure, not a successful performance sample.");
-
-        if (result.StatusCode == HttpStatusCode.Redirect && result.Location is not null)
-        {
-            var redirectPath = result.Location.IsAbsoluteUri
-                ? result.Location.AbsolutePath
-                : result.Location.OriginalString.Split('?')[0];
-            Assert.AreNotEqual("/Account/Login", redirectPath,
-                $"Request {requestNumber} was redirected to login.");
-            Assert.AreNotEqual("/Account/AccessDenied", redirectPath,
-                $"Request {requestNumber} was redirected to access denied.");
-        }
-    }
-
-    private static string SummarizeBody(string body)
-    {
-        const int maxCharacters = 240;
-        var normalized = Regex.Replace(body, @"\s+", " ").Trim();
-        return normalized.Length <= maxCharacters
-            ? normalized
-            : normalized[..maxCharacters] + "...";
-    }
-
     private static string RedirectPath(HttpResponseMessage response)
     {
-        var location = response.Headers.Location!;
+        return RedirectPath(response.Headers.Location);
+    }
+
+    private static string RedirectPath(Uri? location)
+    {
+        Assert.IsNotNull(location, "The response did not include a redirect location.");
         return location.IsAbsoluteUri
             ? location.AbsolutePath
             : location.OriginalString.Split('?')[0];
@@ -252,5 +337,5 @@ public class EligibilityLoadTests
 
     private sealed record DonorClient(HttpClient Client, string Email);
     private sealed record PreparedRequest(DonorClient Donor, FormUrlEncodedContent Content);
-    private sealed record TimedResponse(HttpStatusCode StatusCode, Uri? Location, TimeSpan Elapsed, string Body);
+    private sealed record TimedResponse(DonorClient Donor, HttpStatusCode StatusCode, Uri? Location, TimeSpan Elapsed);
 }
