@@ -1,0 +1,64 @@
+Security probes against the running app (release preview: main + PRs #26, #32, #33), http://127.0.0.1:5090, 2026-10-16 16:28
+
+P1. Direct URL access by role (expected: own role 200; other roles -> Access Denied; anonymous -> login)
+  PASS  anonymous    /Donor/Dashboard               expected login   got login
+  PASS  anonymous    /Donor/Book                    expected login   got login
+  PASS  anonymous    /Donor/Booking/Book            expected login   got login
+  PASS  anonymous    /Donor                         expected login   got login
+  PASS  anonymous    /Staff/Dashboard               expected login   got login
+  PASS  anonymous    /Staff/Bookings                expected login   got login
+  PASS  anonymous    /Staff/Sessions                expected login   got login
+  PASS  anonymous    /Staff                         expected login   got login
+  PASS  anonymous    /Staff/Bookings/SetOutcome/1   expected login   got login
+  PASS  anonymous    /Coordinator/Dashboard         expected login   got login
+  PASS  anonymous    /Coordinator                   expected login   got login
+  PASS  donor        /Donor/Dashboard               expected 200     got 200
+  PASS  donor        /Donor/Book                    expected 200     got 200
+  PASS  donor        /Donor/Booking/Book            expected 200     got 200
+  PASS  donor        /Donor                         expected 200     got 200
+  PASS  donor        /Staff/Dashboard               expected denied  got denied
+  PASS  donor        /Staff/Bookings                expected denied  got denied
+  PASS  donor        /Staff/Sessions                expected denied  got denied
+  PASS  donor        /Staff                         expected denied  got denied
+  PASS  donor        /Staff/Bookings/SetOutcome/1   expected denied  got denied
+  PASS  donor        /Coordinator/Dashboard         expected denied  got denied
+  PASS  donor        /Coordinator                   expected denied  got denied
+  PASS  staff        /Donor/Dashboard               expected denied  got denied
+  PASS  staff        /Donor/Book                    expected denied  got denied
+  PASS  staff        /Donor/Booking/Book            expected denied  got denied
+  PASS  staff        /Donor                         expected denied  got denied
+  PASS  staff        /Staff/Dashboard               expected 200     got 200
+  PASS  staff        /Staff/Bookings                expected 200     got 200
+  PASS  staff        /Staff/Sessions                expected 200     got 200
+  PASS  staff        /Staff                         expected 200     got 200
+  PASS  staff        /Staff/Bookings/SetOutcome/1   expected 200     got 200
+  PASS  staff        /Coordinator/Dashboard         expected denied  got denied
+  PASS  staff        /Coordinator                   expected denied  got denied
+  PASS  coordinator  /Donor/Dashboard               expected denied  got denied
+  PASS  coordinator  /Donor/Book                    expected denied  got denied
+  PASS  coordinator  /Donor/Booking/Book            expected denied  got denied
+  PASS  coordinator  /Donor                         expected denied  got denied
+  PASS  coordinator  /Staff/Dashboard               expected denied  got denied
+  PASS  coordinator  /Staff/Bookings                expected denied  got denied
+  PASS  coordinator  /Staff/Sessions                expected denied  got denied
+  PASS  coordinator  /Staff                         expected denied  got denied
+  PASS  coordinator  /Staff/Bookings/SetOutcome/1   expected denied  got denied
+  PASS  coordinator  /Coordinator/Dashboard         expected 200     got 200
+  PASS  coordinator  /Coordinator                   expected 200     got 200
+  -> 44/44 as expected
+
+P2. Open redirect: sign in with returnUrl=https://evil.example/ (expected: redirect stays on this site)
+  PASS  status 302, Location /Donor/Dashboard
+
+P3. Account lockout: 10 wrong passwords, then the right one (expected: account locked out)
+  wrong attempts returned: [200]; correct password afterwards: status 302, Location /Donor/Dashboard
+  FAIL  no lockout: signed in after 10 failures
+
+P4. Cross-site request forgery: POST /Donor/Cancel with no anti-forgery token (expected: HTTP 400)
+  PASS  status 400
+
+P5. Another donor's booking: donor B cancels donor A's booking (expected: Access Denied, A's booking kept)
+  PASS  status 302, Location http://127.0.0.1:5090/Account/AccessDenied?ReturnUrl=%2FDonor%2FCancel, A's booking kept: True
+
+P6. Sign-in cookie flags
+   HttpOnly | SameSite=lax | not Secure (served over plain HTTP locally)
