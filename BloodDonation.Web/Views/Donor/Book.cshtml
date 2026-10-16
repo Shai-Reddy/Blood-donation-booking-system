@@ -58,6 +58,55 @@
                 <span asp-validation-for="DonorEmail" class="validation-message"></span>
             </div>
 
+            <h2>Your Eligibility</h2>
+
+            <!--
+                These answers are checked against every eligibility rule
+                for the chosen session's date before the booking is saved.
+            -->
+            <div class="form-group">
+                <label asp-for="DateOfBirth"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WeightKg"></label>
+                <input asp-for="WeightKg" class="form-control" />
+                <span asp-validation-for="WeightKg" class="validation-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastDonationDate"></label>
+                <input asp-for="LastDonationDate" class="form-control" />
+                <span asp-validation-for="LastDonationDate" class="validation-message"></span>
+            </div>
+
+            <div class="form-check">
+                <input asp-for="HasStandDownEvent" class="form-check-input" />
+                <label asp-for="HasStandDownEvent" class="form-check-label"></label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StandDownReason"></label>
+                <select asp-for="StandDownReason"
+                        asp-items="Html.GetEnumSelectList<BloodDonation.Domain.Models.StandDownReason>()"
+                        class="form-control">
+                    <option value="">-- Select --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StandDownEventDate"></label>
+                <input asp-for="StandDownEventDate" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StandDownDurationDays"></label>
+                <input asp-for="StandDownDurationDays" class="form-control" />
+                <span asp-validation-for="StandDownDurationDays" class="validation-message"></span>
+            </div>
+
             <h2>Available Sessions</h2>
 
             @if (sessions != null)
