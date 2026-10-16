@@ -74,6 +74,8 @@ Every fix follows the same chain: a test-first commit that fails CI, a fix commi
 | #29 | `docs/booking-eligibility-rca` | C08: #2 RCA and Copilot comparison | – | Shai-Reddy | 16 Oct |
 | #30 | `docs/c01-security-review-evidence` | C01 evidence | – | none of its own (see section 6) | 16 Oct, via #31 |
 | #31 | `docs/c09-age-rules-evidence` | C09 evidence | – | Shai-Reddy | 16 Oct |
+| #32 | `fix/navbar-booking-eligibility` | #1 and #4 fix (draft until C04) | #1, #4 | pending | open |
+| #33 | `ci/smoke-step` | CI smoke test: start the Release build, require HTTP 200 from the home page within 60 s | – | pending | open |
 
 ---
 
@@ -128,7 +130,7 @@ Facts found while collecting evidence that the report should state plainly.
 
 ---
 
-- **C07 added coverage but no smoke step.** Natalie's notes say so explicitly. A smoke step is still needed for Task 5.
+- **C07 added coverage but no smoke step.** Natalie's notes say so explicitly. Added separately in PR #33 (not Copilot-assisted). CI run `38834335237`: 70/70 tests, then "Smoke test passed: home page returned HTTP 200 after 2 attempt(s)." Checked locally that the step fails when the app does not respond (HTTP 000).
 - **The usage log diverged.** `main` gained an older copy of `ai-usage-log.md` (from #29–#31), with a C08 row in the mid-project section. Resolved in the `docs/copilot-evidence` branch on 16 Oct (`d53d631`), keeping M1–M5 and Natalie's C rows.
 
 ---
@@ -174,6 +176,8 @@ Still open without a status: #1 and #4 (P1; to be fixed together once Natalie's 
 - #28–#31 merged (#28 and #30 through #31, see section 6). `main` green, 70 tests.
 - #4 test-first `45de589`; #1 and #4 fix `c89f6e8`; draft PR #32. Issues #1 and #4 labelled `status:in-progress`.
 - Usage-log conflict on #24 resolved (`d53d631`).
+- Screenshots filed: NZBS source (matches #26; comment on #25), PR #32 red check, defect register after clean-up (open and closed).
+- CI smoke step: PR #33, green in run `38834335237`.
 
 ---
 
