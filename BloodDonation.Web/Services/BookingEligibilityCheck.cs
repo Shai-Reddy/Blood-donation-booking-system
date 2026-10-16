@@ -54,25 +54,29 @@ public class BookingEligibilityCheck
             .OrderByDescending(_eligibilityService.StandDownEndDate)
             .FirstOrDefault();
 
-        var isNewDonor = lastDonationDate is null;
-
-        if (!_eligibilityService.IsAgeEligible(dateOfBirth, donationDate, isNewDonor))
+        switch (_eligibilityService.CheckAge(dateOfBirth, lastDonationDate, donationDate))
         {
-            var age = _eligibilityService.CalculateAge(dateOfBirth, donationDate);
-            return age < EligibilityRules.MinimumAge
-                ? new BookingIneligibleModel
+            case AgeEligibility.TooYoung:
+                return new BookingIneligibleModel
                 {
                     FailedRule = "Age",
                     Message = $"Donors must be at least {EligibilityRules.MinimumAge} years old.",
                     EarliestEligibleDate = _eligibilityService.MinimumAgeDate(dateOfBirth)
-                }
-                : new BookingIneligibleModel
+                };
+            case AgeEligibility.TooOld:
+                return new BookingIneligibleModel
                 {
                     FailedRule = "Age",
-                    Message = isNewDonor
-                        ? $"New donors must be {EligibilityRules.NewDonorMaximumAge} or younger."
-                        : $"Returning donors can donate until they turn {EligibilityRules.ReturningDonorAgeLimit}.",
-                    EarliestEligibleDate = null
+                    Message = lastDonationDate is null
+                        ? $"First-time donors must be under {EligibilityRules.NewDonorAgeLimit}."
+                        : $"Donors can donate until they turn {EligibilityRules.AuthorisedDonorAgeLimit}."
+                };
+            case AgeEligibility.NeedsAuthorisation:
+                return new BookingIneligibleModel
+                {
+                    FailedRule = "Age",
+                    Message = "At your age, donating needs authorisation from an NZBS Medical Officer. " +
+                              "Please contact NZBS before booking."
                 };
         }
 

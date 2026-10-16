@@ -83,207 +83,280 @@ public class EligibilityServiceTests
 
     #endregion
 
-    #region IsAgeEligible Tests - New Donors
+    #region CheckAge Tests - First-time Donors
+
+    // Booking date used by every age test. First-time donors have no last donation.
+    private static readonly DateTime AgeBookingDate = new(2024, 6, 15);
+
+    // Existing donors donated in the last 2 years; lapsed donors more than 2 years ago.
+    private static readonly DateTime ExistingDonation = AgeBookingDate.AddDays(-100);
+    private static readonly DateTime LapsedDonation = AgeBookingDate.AddYears(-3);
 
     [TestMethod]
-    public void IsAgeEligible_NewDonor_Age15_ReturnsFalse()
+    public void CheckAge_FirstTimeDonor_Age15_IsTooYoung()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(2009, 6, 15); // Will be exactly 15 on booking date
+        var dateOfBirth = new DateTime(2009, 6, 15); // Exactly 15 on booking date
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
 
         // Assert
-        Assert.IsFalse(result, "Age 15 should be ineligible for new donors (below 16-year minimum)");
+        Assert.AreEqual(AgeEligibility.TooYoung, result, "Age 15 is below the 16-year minimum");
     }
 
     [TestMethod]
-    public void IsAgeEligible_NewDonor_Age16_ReturnsTrue()
+    public void CheckAge_FirstTimeDonor_Age16_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(2008, 6, 15); // Will be exactly 16
+        var dateOfBirth = new DateTime(2008, 6, 15); // Exactly 16
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 16 should be eligible for new donors (exactly meets 16-year minimum)");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Age 16 exactly meets the 16-year minimum");
     }
 
     [TestMethod]
-    public void IsAgeEligible_NewDonor_Age17_ReturnsTrue()
+    public void CheckAge_FirstTimeDonor_Age17_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(2007, 6, 15); // Will be 17
+        var dateOfBirth = new DateTime(2007, 6, 15); // 17
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 17 should be eligible for new donors");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Age 17 should be eligible for first-time donors");
     }
 
     [TestMethod]
-    public void IsAgeEligible_NewDonor_Age70_ReturnsTrue()
+    public void CheckAge_FirstTimeDonor_DayBefore71stBirthday_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1954, 6, 15); // Will be 70
+        var dateOfBirth = new DateTime(1953, 6, 16); // Turns 71 the day after the booking
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 70 should be eligible for new donors");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "First-time donors are eligible until their 71st birthday");
+    }
+
+    // TC07a: NZBS accepts first-time donors until their 71st birthday (#25).
+    [TestMethod]
+    public void TC07a_CheckAge_FirstTimeDonor_Age71_IsTooOld()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1953, 6, 15); // Exactly 71
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.TooOld, result, "First-time donors are not accepted from their 71st birthday");
     }
 
     [TestMethod]
-    public void IsAgeEligible_NewDonor_Age71_ReturnsTrue()
+    public void CheckAge_FirstTimeDonor_Age72_IsTooOld()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1953, 6, 15); // Will be exactly 71
+        var dateOfBirth = new DateTime(1952, 6, 15); // 72
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
+        var result = _service.CheckAge(dateOfBirth, null, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 71 should be eligible for new donors (exactly meets 71-year maximum)");
-    }
-
-    [TestMethod]
-    public void IsAgeEligible_NewDonor_Age72_ReturnsFalse()
-    {
-        // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1952, 6, 15); // Will be 72
-
-        // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: true);
-
-        // Assert
-        Assert.IsFalse(result, "Age 72 should be ineligible for new donors (above 71-year maximum)");
+        Assert.AreEqual(AgeEligibility.TooOld, result, "Age 72 is over the first-time donor limit");
     }
 
     #endregion
 
-    #region IsAgeEligible Tests - Existing Donors
+    #region CheckAge Tests - Existing Donors
 
     [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age15_ReturnsFalse()
+    public void CheckAge_ExistingDonor_Age15_IsTooYoung()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(2009, 6, 15); // Exactly 15 on booking date
+        var dateOfBirth = new DateTime(2009, 6, 15); // Exactly 15
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsFalse(result, "Age 15 should be ineligible for existing donors (below 16-year minimum)");
+        Assert.AreEqual(AgeEligibility.TooYoung, result, "Age 15 is below the 16-year minimum");
     }
 
     [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age16_ReturnsTrue()
+    public void CheckAge_ExistingDonor_Age16_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(2008, 6, 15); // Age 16
+        var dateOfBirth = new DateTime(2008, 6, 15); // Exactly 16
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 16 should be eligible for existing donors (exactly meets 16-year minimum)");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Age 16 exactly meets the 16-year minimum");
     }
 
     [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age71_ReturnsTrue()
+    public void CheckAge_ExistingDonor_Age72_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1953, 6, 15); // Age 71
+        var dateOfBirth = new DateTime(1952, 6, 15); // 72
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 71 should be eligible for existing donors (below the 81st birthday)");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Existing donors are eligible past 71, unlike first-time donors");
     }
 
     [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age72_ReturnsTrue()
+    public void CheckAge_ExistingDonor_DayBefore75thBirthday_IsEligible()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1952, 6, 15); // Age 72
+        var dateOfBirth = new DateTime(1949, 6, 16); // Turns 75 the day after the booking
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "Age 72 should be eligible for existing donors (below the 81st birthday)");
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Existing donors are eligible until their 75th birthday");
+    }
+
+    // TC07b: from their 75th birthday, existing donors need NZBS Medical Officer authorisation (#25).
+    [TestMethod]
+    public void TC07b_CheckAge_ExistingDonor_Age75_NeedsAuthorisation()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1949, 6, 15); // Exactly 75
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.NeedsAuthorisation, result, "Existing donors need authorisation from their 75th birthday");
     }
 
     [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age100_ReturnsFalse()
+    public void CheckAge_ExistingDonor_DayBefore81stBirthday_NeedsAuthorisation()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1924, 6, 15); // Age 100
-
-        // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
-
-        // Assert
-        Assert.IsFalse(result, "Age 100 should be ineligible for existing donors (after the 81st birthday)");
-    }
-
-    [TestMethod]
-    public void IsAgeEligible_ExistingDonor_Age80_ReturnsTrue()
-    {
-        // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1944, 6, 15); // Exactly 80
-
-        // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
-
-        // Assert
-        Assert.IsTrue(result, "Age 80 should be eligible for existing donors (below the 81st birthday)");
-    }
-
-    [TestMethod]
-    public void IsAgeEligible_ExistingDonor_DayBefore81stBirthday_ReturnsTrue()
-    {
-        // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
         var dateOfBirth = new DateTime(1943, 6, 16); // Turns 81 the day after the booking
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsTrue(result, "The day before their 81st birthday, existing donors should still be eligible");
+        Assert.AreEqual(AgeEligibility.NeedsAuthorisation, result, "Authorisation applies until the 81st birthday");
     }
 
-    // TC07b: NZBS accepts returning donors up to their 81st birthday.
     [TestMethod]
-    public void TC07b_IsAgeEligible_ExistingDonor_Age81_ReturnsFalse()
+    public void CheckAge_ExistingDonor_Age81_IsTooOld()
     {
         // Arrange
-        var bookingDate = new DateTime(2024, 6, 15);
-        var dateOfBirth = new DateTime(1943, 6, 15); // Exactly 81 on booking date
+        var dateOfBirth = new DateTime(1943, 6, 15); // Exactly 81
 
         // Act
-        var result = _service.IsAgeEligible(dateOfBirth, bookingDate, isNewDonor: false);
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
 
         // Assert
-        Assert.IsFalse(result, "Age 81 should be ineligible for existing donors (on or after the 81st birthday)");
+        Assert.AreEqual(AgeEligibility.TooOld, result, "Nobody can donate from their 81st birthday");
+    }
+
+    [TestMethod]
+    public void CheckAge_ExistingDonor_Age100_IsTooOld()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1924, 6, 15); // 100
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, ExistingDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.TooOld, result, "Age 100 is past the 81st birthday");
+    }
+
+    #endregion
+
+    #region CheckAge Tests - Lapsed Donors
+
+    [TestMethod]
+    public void CheckAge_LapsedDonor_DayBefore71stBirthday_IsEligible()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1953, 6, 16); // Turns 71 the day after the booking
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, LapsedDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.Eligible, result, "Lapsed donors are eligible until their 71st birthday");
+    }
+
+    [TestMethod]
+    public void CheckAge_LapsedDonor_Age71_NeedsAuthorisation()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1953, 6, 15); // Exactly 71
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, LapsedDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.NeedsAuthorisation, result, "Lapsed donors need authorisation from their 71st birthday");
+    }
+
+    [TestMethod]
+    public void CheckAge_LapsedDonor_Age81_IsTooOld()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1943, 6, 15); // Exactly 81
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, LapsedDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.TooOld, result, "Nobody can donate from their 81st birthday");
+    }
+
+    [TestMethod]
+    public void CheckAge_Age72_DonatedExactlyTwoYearsAgo_IsEligible()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1952, 6, 15); // 72
+        var lastDonation = AgeBookingDate.AddYears(-2); // Still within the last 2 years
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, lastDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.Eligible, result, "A donation exactly 2 years ago makes the donor existing, not lapsed");
+    }
+
+    [TestMethod]
+    public void CheckAge_Age72_DonatedTwoYearsAndOneDayAgo_NeedsAuthorisation()
+    {
+        // Arrange
+        var dateOfBirth = new DateTime(1952, 6, 15); // 72
+        var lastDonation = AgeBookingDate.AddYears(-2).AddDays(-1); // Lapsed
+
+        // Act
+        var result = _service.CheckAge(dateOfBirth, lastDonation, AgeBookingDate);
+
+        // Assert
+        Assert.AreEqual(AgeEligibility.NeedsAuthorisation, result, "One day past 2 years makes the donor lapsed");
+    }
+
+    [TestMethod]
+    public void IsAgeEligible_IsTrueOnlyWhenCheckAgeIsEligible()
+    {
+        Assert.IsTrue(_service.IsAgeEligible(new DateTime(1953, 6, 16), null, AgeBookingDate));
+        Assert.IsFalse(_service.IsAgeEligible(new DateTime(1949, 6, 15), ExistingDonation, AgeBookingDate), "Needs authorisation is not eligible to book");
+        Assert.IsFalse(_service.IsAgeEligible(new DateTime(2009, 6, 15), null, AgeBookingDate));
     }
 
     [TestMethod]
@@ -306,8 +379,8 @@ public class EligibilityServiceTests
 
         // Assert
         Assert.AreEqual(new DateTime(2024, 6, 15), earliest);
-        Assert.IsTrue(_service.IsAgeEligible(dateOfBirth, earliest, isNewDonor: true), "The 16th birthday should be eligible");
-        Assert.IsFalse(_service.IsAgeEligible(dateOfBirth, earliest.AddDays(-1), isNewDonor: true), "The day before should not be");
+        Assert.IsTrue(_service.IsAgeEligible(dateOfBirth, null, earliest), "The 16th birthday should be eligible");
+        Assert.IsFalse(_service.IsAgeEligible(dateOfBirth, null, earliest.AddDays(-1)), "The day before should not be");
     }
 
     #endregion
