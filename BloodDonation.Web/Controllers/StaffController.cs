@@ -6,9 +6,11 @@ using BloodDonation.Web.Models;
 
 namespace BloodDonation.Web.Controllers
 {
+    // Only staff can access this controller
     [Authorize(Roles = Roles.Staff)]
     public class StaffController : Controller
     {
+        // Loads the figures we need for the staff dashboard
         [HttpGet]
         public IActionResult Dashboard()
         {
@@ -18,12 +20,14 @@ namespace BloodDonation.Web.Controllers
             // Count only sessions scheduled for today for the dashboard.
             ViewBag.TodaySessions = SessionStats.CountOn(InMemoryStore.Sessions, DateTime.Today);
 
+            // Counts all bookings, deferred bookings and no-shows
             ViewBag.TotalBookings = InMemoryStore.Bookings.Count;
             ViewBag.FlaggedCount = InMemoryStore.Bookings.Count(b => b.Status == "Deferred");
             ViewBag.NoShowCount = InMemoryStore.Bookings.Count(b => b.Status == "NoShow");
             return View();
         }
 
+        // Gets the bookings and their session details for the staff bookings page
         [HttpGet]
         public IActionResult Bookings()
         {
@@ -39,9 +43,11 @@ namespace BloodDonation.Web.Controllers
             return View();
         }
 
+        // Records the outcome staff have selected for a booking
         [HttpPost]
         public IActionResult RecordOutcome(string bookingId, string outcome, string? deferralReason)
         {
+            // Finds the booking we need to update
             var booking = InMemoryStore.Bookings.FirstOrDefault(b => b.Id == bookingId);
             if (booking != null)
             {
@@ -71,6 +77,7 @@ namespace BloodDonation.Web.Controllers
                     booking.DeferralReason = deferralReason?.Trim();
                 }
 
+                // Adds one to the stock if the outcome is donated and the blood type is listed
                 if (outcome == "Donated" && !string.IsNullOrEmpty(booking.BloodType) && InMemoryStore.StockLevels.TryGetValue(booking.BloodType, out var currentStock))
                 {
                     InMemoryStore.StockLevels[booking.BloodType] = currentStock + 1;
@@ -80,6 +87,7 @@ namespace BloodDonation.Web.Controllers
             return RedirectToAction("Bookings");
         }
 
+        // Opens the sessions page with the sessions ordered by date
         [HttpGet]
         public IActionResult Sessions()
         {
@@ -87,6 +95,7 @@ namespace BloodDonation.Web.Controllers
             return View();
         }
 
+        // Handles the form for adding a new donation session
         [HttpPost]
         public IActionResult Sessions(SessionViewModel model)
        {
@@ -103,6 +112,7 @@ namespace BloodDonation.Web.Controllers
     }
 
     // Add the new session after validation has passed.
+    // Gives it an ID based on the session count and starts with no bookings
     InMemoryStore.Sessions.Add(new DonationSession
     {
         Id = "S" + (InMemoryStore.Sessions.Count + 1),
@@ -113,6 +123,7 @@ namespace BloodDonation.Web.Controllers
         BookedCount = 0
     });
 
+    // Shows a confirmation after redirecting back to the sessions page
     TempData["Message"] = "New session added.";
 
     return RedirectToAction("Sessions");
