@@ -1,4 +1,4 @@
-# NZBS Blood Donation Booking System
+# Blood Donation Booking System
 
 A web application for booking blood donation appointments. It checks each booking against the New Zealand Blood Service eligibility rules (donation interval, age, weight and stand-down periods), lets clinic staff record donation outcomes, and gives coordinators booking, deferral and stock figures.
 
